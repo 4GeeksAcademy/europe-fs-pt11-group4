@@ -13,7 +13,7 @@ export const Home = () => {
                 <div className="carousel-item active">
                   <img calss = "image" height="400" width="100%" src={doctor3ImageUrl}/>
                   <div className="carousel-caption d-md-block">
-                    <h1 className="col-12 text-danger">With <b>myDoctor</b>Experience One-Stop Heathcare</h1><br></br>
+                    <h1 className="col-12 text-danger">With <b>myDoctor</b> Experience One-Stop Heathcare</h1><br></br>
                     <h3 className="col-12 text-danger">Access routine medical care and urgent care services from the comfort of your Home, 24x7</h3>
 					<h3>Talk to specialist doctors via video call and receive instant health and medical consultation</h3>
 				  </div>
