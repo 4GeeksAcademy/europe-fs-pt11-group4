@@ -9,7 +9,7 @@ export const Navbar = () => {
 			<div className="container-fluid">
 				<Link to="/">
 					<img src={myDoctorUrl} alt="my doctor logo" style={{ width: '70px', }} />
-					<span className="brand mb-0 h1">myDoctor</span>
+					<span className="brand h1">&nbsp;myDoctor</span>
 				</Link>
 				<div className="ml-auto">
 					<Link to="/demo">

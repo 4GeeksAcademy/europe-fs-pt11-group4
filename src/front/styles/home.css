@@ -13,5 +13,10 @@
     color: #0073D1;
     font-size: large;
     text-decoration: none;
-    font-style: normal;
+    font-style: oblique;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
 }
