@@ -1,4 +1,11 @@
 from flask import jsonify, url_for
+from hashlib import sha256
+
+def get_hash(string):
+    encoding = "utf-8"
+    byte_string = bytes(string, encoding=encoding)
+    return sha256(byte_string).hexdigest()
+
 
 class APIException(Exception):
     status_code = 400

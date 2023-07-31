@@ -13,9 +13,85 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			authToken: null,
+			user: null,
+			users: [],
 		},
 		actions: {
+
+
+			login: async (email, password, navigate) => {
+				try {
+					const response = await fetch(
+						"https://sanghmitra2023-jubilant-bassoon-6j9744q9x57f5r6g-3001.preview.app.github.dev/api/token",
+						{
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({
+								"email": email,
+								"password": password
+							}),
+						}
+					);
+					if (response.ok) {
+						const data = await response.json()
+						setStore({ authToken: data.token });
+						navigate("/private")
+						return true
+					}
+				} catch (error) {
+					console.log(error);
+				};
+				return false
+
+			},
+
+			getUser: async () => {
+				const store = getStore()
+				try {
+					const response = await fetch("https://sanghmitra2023-jubilant-bassoon-6j9744q9x57f5r6g-3001.preview.app.github.dev/api/protected", {
+						headers: { Authorization: `Bearer ${store.authToken}` }
+					});
+					if (response.ok) {
+						const data = await response.json();
+						setStore({ user: data })
+						localStorage.setItem("user", JSON.stringify(data))
+					}
+				}
+				catch (error) {
+					console.log(error)
+				}
+
+			},
+
+			loadUser: async () => {
+				const store = getStore();
+				try {
+					const response = await fetch("https://sanghmitra2023-jubilant-bassoon-6j9744q9x57f5r6g-3001.preview.app.github.dev/api/user", {
+						headers: { Authorization: `Bearer ${store.authToken}` }
+					});
+					if (response.ok) {
+						const data = await response.json();
+						setStore({ users: data.users })
+					}
+				}
+				catch (error) {
+					console.log(error)
+				}
+
+			},
+
+			logOut: async (navigate) => {
+				setStore({ user: null })
+				localStorage.clear()
+				navigate("/")
+			},
+
+
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
