@@ -5,3 +5,13 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+.navbar {
+    color: white;
+    border-bottom: grey;
+}
+.brand {
+    color: #0073D1;
+    font-size: large;
+    text-decoration: none;
+    font-style: normal;
+}
