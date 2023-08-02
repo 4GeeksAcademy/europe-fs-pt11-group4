@@ -12,11 +12,12 @@ export const Navbar = () => {
 					<span className="brand h1">&nbsp;myDoctor</span>
 				</Link>
 				<div className="ml-auto">
-          <Link to="/signup" >
-								<button>Register</button>
-							</Link>
 					<Link to="/login">
-						<button className="btn btn-primary">Sign In</button>
+						<button className="btn btn-light rounded-lg">Login</button>
+					</Link>
+					&nbsp;
+					<Link to="/signup">
+						<button className="btn btn-primary rounded-pill"> Register now</button>
 					</Link>
 				</div>
 			</div>
