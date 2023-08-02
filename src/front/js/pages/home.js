@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import doctor3ImageUrl from "../../img/doctor3.jpg";
+import doctor4ImageUrl from "../../img/doctor4.jpg";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -8,31 +9,31 @@ export const Home = () => {
 
 	return (
 		<div>
-			<div id="carouselCaptions" className="carousel slide">
+			  <div id="carouselCaptions" className="carousel slide">
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img calss = "image" height="400" width="100%" src={doctor3ImageUrl}/>
-                  <div className="carousel-caption d-md-block">
-                    <h1 className="col-12 text-danger">With <b>myDoctor</b> Experience One-Stop Healthcare</h1><br></br>
-                    <h3 className="col-12 text-danger">Access routine medical care and urgent care services from the comfort of your home, 24x7</h3>
-					<h3>Talk to specialist doctors via video call and receive instant health and medical consultation</h3>
-				  </div>
+                  <img calss = "image" height="600" width="100%" src={doctor4ImageUrl}/>
+                    <div className="carousel-caption d-md-block">
+                        <h1 className="col-12 bg-white bg-opacity-25 text-primary">With <b>myDoctor</b> Experience One-Stop Heathcare</h1><br></br>
+                        <h3 className="col-12 bg-white bg-opacity-25 text-dark">Access routine medical care and urgent care services from the comfort of your Home, 24x7</h3>
+                        <h3 className="col-12 bg-white bg-opacity-25 text-primary">Talk to specialist doctors via video call and receive instant health and medical consultation</h3>
+                    </div>
                 </div>
               </div>
-            </div>
+        </div>
 
-            <div className="container p-5 m-7">
-                  <h2 className="mt-0 mb-1">What Makes <i>myDoctor</i> <span className="text-success">a "One-Stop Healthcare App"</span></h2><br></br>
-                <div className="container d-flex justify-content-left">
-					<div className="container"> 
-						<p>One place to get initial consultation, diagnosis, second opinion, treatment plans, e-prescriptions, follow up, medical reports in e-copy and much more</p>
-						<p>Top doctors across Europe are onboarded from various disciplines including General Physicians, Physiotherapists, Psychiatrists, Dentists, ENT Specialists, Gynecologists, Cardiologists, Dermatologists, Neurologists, Pediatricians, and many others.</p>
-				  	</div> 
-					<div>
-						<img className="rounded float-end" width="300"  height="200" src={doctor3ImageUrl}/ >
-					</div>  
-                </div>
-            </div><hr></hr>
+        <div className="container p-5 m-7">
+            <h2 className="mt-0 mb-1">What Makes <i>myDoctor</i> <span className="text-success">a "One-Stop Healthcare App"</span></h2><br></br>
+          <div className="container d-flex justify-content-left">
+              <div className="container"> 
+                  <p>One place to get initial consultation, diagnosis, second opinion, treatment plans, e-prescriptions, follow up, medical reports in e-copy and much more</p>
+                  <p>Top doctors across Europe are onboarded from various disciplines including General Physicians, Physiotherapists, Psychiatrists, Dentists, ENT Specialists, Gynecologists, Cardiologists, Dermatologists, Neurologists, Pediatricians, and many others.</p>
+              </div> 
+              <div>
+                  <img className="rounded float-end" width="300"  height="200" src={doctor3ImageUrl}/ >
+              </div>  
+          </div>
+        </div><hr></hr>
 			
 			<div className="container p-5 m-7">
                   <h2 className="mt-0 mb-1">With so many such apps around <span className="text-success">Why Choose Us</span></h2><br></br>
@@ -60,7 +61,7 @@ export const Home = () => {
 						<p>Free second opinion from other doctors onboard</p>
 					</div>  
 					<div>
-						<img className="rounded float-start" width="300"  height="200" src={doctor3ImageUrl}/ >
+						<img className="rounded float-end" width="300"  height="200" src={doctor3ImageUrl}/ >
 					</div>
                 </div>
             </div><hr></hr>
