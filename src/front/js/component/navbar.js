@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import myDoctorUrl from "../../img/mydoctor.png";
+import "../../styles/home.css";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container display-flex">
-					<div className="alert alert-info">
-						<p>A new user?</p>
-							<Link to="/signup" >
-								<button>Create an account</button>
+		<nav className="navbar">
+			<div className="container">
+				<Link to="/">
+					<img src={myDoctorUrl} alt="my doctor logo" style={{ width: '70px', }} />
+					<span className="brand h1">&nbsp;myDoctor</span>
+				</Link>
+				<div className="ml-auto">
+          <Link to="/signup" >
+								<button>Register</button>
 							</Link>
-					</div>
-				
-					<div className="alert alert-info">
-						<p>Already registered?</p>
-							<Link to="/login" >
-								<button>Login</button>
-							</Link>
-					</div>
-				
+					<Link to="/login">
+						<button className="btn btn-primary">Sign In</button>
+					</Link>
+				</div>
 			</div>
 		</nav>
 	);
