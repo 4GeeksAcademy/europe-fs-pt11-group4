@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			people: [],
 			message: null,
 			demo: [
 				{
@@ -96,7 +97,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			setPeopleData: (results) => {
+				const store = getStore();
+				setStore({ ...store, people: results });
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
