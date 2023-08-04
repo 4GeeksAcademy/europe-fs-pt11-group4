@@ -34,6 +34,7 @@ class Doctor(db.Model):
     name = db.Column(db.String(250), unique=False, nullable=False)
     specialty = db.Column(db.String(250), unique=False, nullable=False)
     price = db.Column(db.Float, unique=False, nullable=True)
+    picture = db.Column(db.String(250), unique=False, nullable=True)
     appointments = db.relationship('Appointment', backref='doctor', lazy=True)
 
     def __init__(self, name, specialty):
@@ -54,7 +55,6 @@ class Appointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     doctor_id = db.Column(db.Integer, db.ForeignKey("doctor.id"), nullable=False)
-    date = db.Column(db.DateTime, unique=False, nullable=False)
     time = db.Column(db.DateTime, unique=False, nullable=False)
     user_comment = db.Column(db.String(250), unique=False, nullable=True)
     report = db.relationship('Report', backref='appointment', lazy=True, uselist=False)
@@ -76,7 +76,6 @@ class Appointment(db.Model):
 class Report(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     appointment_id = db.Column(db.Integer, db.ForeignKey("appointment.id"), nullable=False)
-    date = db.Column(db.DateTime, unique=False, nullable=False)
     time = db.Column(db.DateTime, unique=False, nullable=False)
     doctor_comment = db.Column(db.String(250), unique=False, nullable=False)
     height = db.Column(db.Float, unique=False, nullable=True)
