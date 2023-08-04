@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			login: async (email, password, navigate) => {
 				try {
 					const response = await fetch(
-						"https://sanghmitra2023-jubilant-bassoon-6j9744q9x57f5r6g-3001.preview.app.github.dev/api/token",
+						process.env.BACKEND_URL +"/api/token",
 						{
 							method: "POST",
 							headers: {
@@ -53,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getUser: async () => {
 				const store = getStore()
 				try {
-					const response = await fetch("https://sanghmitra2023-jubilant-bassoon-6j9744q9x57f5r6g-3001.preview.app.github.dev/api/protected", {
+					const response = await fetch(process.env.BACKEND_URL +"/api/protected", {
 						headers: { Authorization: `Bearer ${store.authToken}` }
 					});
 					if (response.ok) {
@@ -71,7 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadUser: async () => {
 				const store = getStore();
 				try {
-					const response = await fetch("https://sanghmitra2023-jubilant-bassoon-6j9744q9x57f5r6g-3001.preview.app.github.dev/api/user", {
+					const response = await fetch(process.env.BACKEND_URL+"api/user", {
 						headers: { Authorization: `Bearer ${store.authToken}` }
 					});
 					if (response.ok) {
