@@ -21,11 +21,13 @@ def handle_hello():
 def create_user():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
+    name = request.json.get("name", None)
+    dob = request.json.get("dob", None)
 
-    if not email or not password:
-        return jsonify({ "msg": "No password or email present." }), 400
+    if not email or not password or not name or not dob:
+        return jsonify({ "msg": "No password or email or name or dob present." }), 400
     
-    new_user = User(email=email, password=password)
+    new_user = User(email=email, password=password, name= name, dob=dob)
     db.session.add(new_user)
     db.session.commit()
 

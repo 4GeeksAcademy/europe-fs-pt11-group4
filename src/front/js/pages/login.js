@@ -65,13 +65,13 @@ export const Login = () => {
                 </div>
 
                 <div className="pt-1 mb-4">
-                    <button className="btn btn-primary btn-lg btn-block" type="button" onClick={loginUserRequest}>Login</button>
-                    <div className="mb-3 form-check">
-                    <Link to="/forgot" >
-                        <p>Forgot Password</p>
-                    </Link>
-                </div>
-                
+                    <div className="form-check">
+                        <Link to="/forgot" >
+                            <p>Forgot Password?</p>
+                        </Link>
+                    </div>
+                    <button className="btn btn-primary " type="button" onClick={loginUserRequest}>Login</button>
+
                 </div>
 
                 
