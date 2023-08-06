@@ -12,7 +12,7 @@ export const Home = () => {
 			  <div id="carouselCaptions" className="carousel slide">
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img calss = "image" height="600" width="100%" src={doctor4ImageUrl}/>
+                  <img className = "image" height="600" width="100%" src={doctor4ImageUrl}/>
                     <div className="carousel-caption d-md-block">
                         <h1 className="col-12 bg-white bg-opacity-25 text-primary">With <b>myDoctor</b> Experience One-Stop Heathcare</h1><br></br>
                         <h3 className="col-12 bg-white bg-opacity-25 text-dark">Access routine medical care and urgent care services from the comfort of your Home, 24x7</h3>
@@ -20,6 +20,42 @@ export const Home = () => {
                     </div>
                 </div>
               </div>
+        </div>
+
+        <div className="card max-width: 540px;">
+          <div className="row g-0">
+            <div className="col-md-4">
+              <img src={doctor3ImageUrl} className="img-fluid rounded-start" width="400"  height="900" alt="..."/>
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+              <h2 className="mt-0 mb-1">What Makes <i>myDoctor</i> <span className="text-success">a "One-Stop Healthcare App"</span></h2><br></br>
+                  <div className="card-body">
+                    <p>One place to get initial consultation, diagnosis, second opinion, treatment plans, e-prescriptions, follow up, medical reports in e-copy and much more</p>
+                  </div>  
+                  <div className="card-body">
+                    <p>Top doctors across Europe are onboarded from various disciplines including General Physicians, Physiotherapists, Psychiatrists, Dentists, ENT Specialists, Gynecologists, Cardiologists, Dermatologists, Neurologists, Pediatricians, and many others.</p>
+                  </div>
+                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="card p-5 m-7 max-width: 540px border-primary">
+          <div className="row g-0">
+            <div className="col-md-4 ">
+              <img src={doctor3ImageUrl} className="img-fluid rounded-end" alt="..."/>
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+              <h2 className="mt-0 mb-1">What Makes <i>myDoctor</i> <span className="text-success">a "One-Stop Healthcare App"</span></h2><br></br>
+                  <p className="card-text">One place to get initial consultation, diagnosis, second opinion, treatment plans, e-prescriptions, follow up, medical reports in e-copy and much more</p>
+                  <p>Top doctors across Europe are onboarded from various disciplines including General Physicians, Physiotherapists, Psychiatrists, Dentists, ENT Specialists, Gynecologists, Cardiologists, Dermatologists, Neurologists, Pediatricians, and many others.</p>
+                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="container p-5 m-7">
@@ -100,10 +136,10 @@ export const Home = () => {
             </div>
           </div><hr></hr>
 
-          <div classNameName="container p-6 m-7">
-            <h2 className="mt-0 mb-1">FAQs</h2><br></br>
+          <div className="container p-6 m-7">
+            <h2 className="text-center mt-0 mb-1">FAQs</h2><br></br>
             <div className="accordion accordion-flush" id="accordionFlushExample">
-                <div className="accordion-item">
+                <div className="accordion-item ">
                     <h2 className="accordion-header" id="flush-headingOne">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             I am not technology-savy. Is this site for me?
