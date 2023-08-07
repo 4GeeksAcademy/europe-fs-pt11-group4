@@ -11,9 +11,9 @@ export const Doctors = (props) => {
 	console.log(store)
 
 	useEffect(() =>{
-		fetch("https://www.swapi.tech/api/people")
+		fetch("https://probable-funicular-v944qgvvx59cvv9-3001.app.github.dev/api/doctors")
 		.then((result) => result.json())
-		.then((data) => actions.setPeopleData(data.results));
+		.then((data) => actions.setDoctorData(data));
 	}, []);
 
 	return (
@@ -40,16 +40,15 @@ export const Doctors = (props) => {
 			</div>
 			
 			<div className="list-group list-group-horizontal inline-scroll">
-				{store.people.map((person) => {
+				{store.doctors.map((doctor) => {
 					return (
-						<div key={person.uid}>
+						<div key={doctor.id}>
 							<div className="card" style={{width: "18rem", marginRight: "15px"}}>
-								<img src="https://www.findablackdoctor.com/wp-content/themes/fabd/src/assets/hp-hero.jpg" className="card-img-top" alt="..."/>
+								<img src={doctor.picture} className="card-img-top" alt="..." style={{width: "100%", height: "180px", }}/>
 								<div className="card-body">
-									<h5 className="card-title">Dr. {person.name}</h5>
-									<p className="card-text">Specialty: {person.gender}</p>
-									<p className="card-text">Price per hour: {person.hair_color}</p>
-									
+									<h5 className="card-title">Dr. {doctor.name}</h5>
+									<p className="card-text"><b>Specialty</b>: {doctor.specialty}</p>
+									<p className="card-text"><b>Price per hour</b>: {doctor.price}€</p>
 								</div>
 							</div>	
 						</div>

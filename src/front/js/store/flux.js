@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: [],
+			doctors: [],
 			message: null,
 			demo: [
 				{
@@ -20,8 +20,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			users: [],
 		},
 		actions: {
-
-
 			login: async (email, password, navigate) => {
 				try {
 					const response = await fetch(
@@ -86,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			logOut: async (navigate) => {
-				setStore({ user: null })
+				setStore({ user: null, authToken: null })
 				localStorage.clear()
 				navigate("/")
 			},
@@ -97,9 +95,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			setPeopleData: (results) => {
+			setDoctorData: (data) => {
 				const store = getStore();
-				setStore({ ...store, people: results });
+				setStore({ ...store, doctors: data });
 			},
 			getMessage: async () => {
 				try{

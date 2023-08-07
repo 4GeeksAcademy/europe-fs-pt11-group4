@@ -3,7 +3,7 @@ import { useForm } from "../hooks/useform";
 import { Link, useNavigate } from "react-router-dom";
 
 
-export const SignUp = () => {
+export const Booking = () => {
     const navigate = useNavigate();
 
 
@@ -64,7 +64,7 @@ const createUser = async (event) => {
         })
         if (response.ok){
             alert('Welcome')
-            navigate("/login")
+            navigate("/private")
             return true
         }
        }
