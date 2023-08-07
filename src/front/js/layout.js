@@ -14,6 +14,7 @@ import { SingUp } from "./pages/signup";
 import { Booking } from "./pages/booking";
 import { Login } from "./pages/login";
 import { Private } from "./pages/private";
+import { Report } from "./pages/report";
 import { Forgot } from "./pages/forgot";
 
 //create your first component
@@ -36,6 +37,7 @@ const Layout = () => {
                         <Route element={<Booking />} path="/booking" />
                         <Route element={<Forgot />} path="/forgot" />
                         <Route element={<Private />} path="/private" />
+                        <Route element={<Report />} path="/report" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />

@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Doctor
+from api.models import db, User, Doctor, Report
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
@@ -59,6 +59,21 @@ def protected():
     
     return jsonify({"id": user.id, "email": user.email }), 200
 
+@api.route('/report', methods=['GET'])
+def handle_get_all_report():
+    all_report = Report.query.all()
+    print(all_report)
+    result = list(map(lambda item: item.serialize(), all_report))
+    return jsonify(result), 200
+
+@api.route('/report/<int:id>', methods=['GET'])
+def handle_get_one_report(id):
+    report = Report.query.get(id)
+    if Report:
+        return jsonify (report.serialize()), 200
+    else:
+        return jsonify ({"message" : "Report not found"}), 404
+      
 @api.route('/doctors', methods=['GET'])
 def handle_doctors():
 

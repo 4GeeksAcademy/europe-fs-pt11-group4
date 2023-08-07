@@ -3,7 +3,7 @@ import { useForm } from "../hooks/useform";
 import { Link, useNavigate } from "react-router-dom";
 
 
-export const SingUp = () => {
+export const SignUp = () => {
     const navigate = useNavigate();
 
 

@@ -61,10 +61,15 @@ class Appointment(db.Model):
     time = db.Column(db.DateTime, unique=False, nullable=False)
     user_comment = db.Column(db.String(250), unique=False, nullable=True)
     report = db.relationship('Report', backref='appointment', lazy=True, uselist=False)
+    appointment_doctor= db.relationship("Doctor")
+    appointment_user= db.relationship("User")
     
-    def __init__(self, user_id, doctor_id):
+    def __init__(self, user_id, doctor_id, doctor, user, time):
         self.user_id = user_id
         self.doctor_id = doctor_id
+        self.doctor= doctor
+        self.user= user
+        self.time= time
 
     def __repr__(self):
         return f'<Appointment {self.user_id}>'
@@ -73,6 +78,9 @@ class Appointment(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
+            "time": self.time,
+            "doctor": self.doctor.serialize(),
+            "user": self.user.serialize(),
             # do not serialize the password, its a security breach
         }
     
@@ -86,11 +94,14 @@ class Report(db.Model):
     blood_pressure = db.Column(db.String(250), unique=False, nullable=True)
     vo2_max = db.Column(db.Float, unique=False, nullable=True)
     cholesterol = db.Column(db.Float, unique=False, nullable=True)
+    appointments = db.relationship("Appointment")
     
 
-    def __init__(self, appointment_id, date):
+    def __init__(self, appointment_id, date, appointments, doctor_comment):
         self.appointment_id = appointment_id
         self.date = date
+        self.appointments = appointments
+        self.doctor_comment= doctor_comment
 
     def __repr__(self):
         return f'<Report {self.appointment_id}>'
@@ -99,5 +110,7 @@ class Report(db.Model):
         return {
             "id": self.id,
             "appointment_id": self.appointment_id,
+            "doctor_comment": self.doctor_comment,
+            "appointments": self.appointments.serialize(),
             # do not serialize the password, its a security breach
         }
