@@ -14,14 +14,19 @@ const Table = ({ headers }) => {
       <thead>
         <tr>
           {headers.map((header, index) => (
-            <TableHeader key={index} header={header} />
+            <th key={index}>{header.title}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {report.map((report, index) => (
-          <TableData report={report} headers={headers} key={index} />
+          <tr>
+          <td key={index}>{report.appointments.doctor.name}</td>
+          <td key={index}>{report.appointments.time}</td>
+          <td key={index}>{report.doctor_comment}</td>
+          </tr>
         ))}
+        
       </tbody>
     </table>
   );

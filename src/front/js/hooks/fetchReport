@@ -12,7 +12,7 @@ export const FetchReport = (api) => {
         const report = await fetch(api);
         const reportData = await report.json();
         setReport(reportData);
-        console.log(report);
+        console.log(reportData);
       } catch (error) {
         setError(error);
       } finally {
