@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			logOut: async (navigate) => {
-				setStore({ user: null })
+				setStore({ user: null, authToken: null })
 				localStorage.clear()
 				navigate("/")
 			},
