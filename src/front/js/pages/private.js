@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Doctors } from "./doctor";
 import { UserHome } from "./userhome";
@@ -78,12 +79,13 @@ export const Private = () => {
 						</div>
 						<div className="flex-fill">
 							<img className="" width="300"  height="165" src={doctor3ImageUrl}/ >
-						</div> 
+						</div>
 					</div>
 					<br />
-					<Button variant="primary" size="lg">
-          				Make a booking now
-        			</Button>
+					<Link to="/booking">
+						<button variant="primary" size="lg"> Make a booking now</button>
+					</Link>
+					
 				</TabPanel>
 				<TabPanel>
 					<h4>Invoices from previous appointments</h4>
