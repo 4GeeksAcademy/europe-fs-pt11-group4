@@ -48,6 +48,9 @@ class Doctor(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "specialty": self.specialty,
+            "price": self.price,
+            "picture": self.picture,
             # do not serialize the password, its a security breach
         }
     

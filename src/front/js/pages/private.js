@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Doctors } from "./doctor";
 import { UserHome } from "./userhome";
-import Nav from 'react-bootstrap/Nav';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Button from 'react-bootstrap/Button';
@@ -42,14 +41,14 @@ export const Private = () => {
 					<UserHome />
 					<br />
 					<h4>Upcoming appointments</h4>
-					<Card border="dark" style={{ width: '18rem' }}>
+					<Card border="dark" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
 						<Card.Header>August</Card.Header>
 						<Card.Body>
 						<Card.Title>18 August 2023</Card.Title>
 						</Card.Body>
 					</Card>
 					<br />
-					<Card border="info" style={{ width: '18rem' }}>
+					<Card border="info" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
 						<Card.Header>September</Card.Header>
 						<Card.Body>
 						<Card.Title>None</Card.Title>
