@@ -63,7 +63,7 @@ const createUser = async (event) => {
             },
         })
         if (response.ok){
-            alert('Welcome')
+            alert('Account created successfully')
             navigate("/login")
             return true
         }
