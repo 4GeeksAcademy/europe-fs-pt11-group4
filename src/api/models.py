@@ -61,8 +61,8 @@ class Appointment(db.Model):
     time = db.Column(db.DateTime, unique=False, nullable=False)
     user_comment = db.Column(db.String(250), unique=False, nullable=True)
     report = db.relationship('Report', backref='appointment', lazy=True, uselist=False)
-    appointment_doctor= db.relationship("Doctor")
-    appointment_user= db.relationship("User")
+    appointment_doctor= db.relationship("Doctor", overlaps="appointments,doctor")
+    appointment_user= db.relationship("User", overlaps="appointments,user")
     
     def __init__(self, user_id, doctor_id, doctor, user, time):
         self.user_id = user_id
@@ -94,7 +94,7 @@ class Report(db.Model):
     blood_pressure = db.Column(db.String(250), unique=False, nullable=True)
     vo2_max = db.Column(db.Float, unique=False, nullable=True)
     cholesterol = db.Column(db.Float, unique=False, nullable=True)
-    appointments = db.relationship("Appointment")
+    appointments = db.relationship("Appointment", overlaps="appointment,report")
     
 
     def __init__(self, appointment_id, date, appointments, doctor_comment):

@@ -83,7 +83,7 @@ export const Private = () => {
 					</div>
 					<br />
 					<Link to="/booking">
-						<button variant="primary" size="lg"> Make a booking now</button>
+						<Button variant="primary" size="lg"> Make a booking now</Button>
 					</Link>
 					
 				</TabPanel>
