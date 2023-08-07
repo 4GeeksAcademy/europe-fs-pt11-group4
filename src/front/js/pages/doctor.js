@@ -47,9 +47,8 @@ export const Doctors = (props) => {
 								<img src={doctor.picture} className="card-img-top" alt="..." style={{width: "100%", height: "180px", }}/>
 								<div className="card-body">
 									<h5 className="card-title">Dr. {doctor.name}</h5>
-									<p className="card-text" id="dropdown-basic"><b>Specialty</b>: {doctor.specialty}</p>
+									<p className="card-text"><b>Specialty</b>: {doctor.specialty}</p>
 									<p className="card-text"><b>Price per hour</b>: {doctor.price}€</p>
-									
 								</div>
 							</div>	
 						</div>

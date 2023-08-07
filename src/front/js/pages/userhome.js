@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 export const UserHome = (props) => {
   return (
     <div className="d-flex">
-      <Card border="primary" style={{ width: '18rem' }}>
+      <Card border="primary" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
         <Card.Header>Date of birth</Card.Header>
         <Card.Body>
           <Card.Title>24 June 1990</Card.Title>
@@ -13,7 +13,7 @@ export const UserHome = (props) => {
       </Card>
       <br />
 
-      <Card border="secondary" style={{ width: '18rem' }}>
+      <Card border="secondary" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
         <Card.Header>Height</Card.Header>
         <Card.Body>
           <Card.Title>170m</Card.Title>
@@ -22,7 +22,7 @@ export const UserHome = (props) => {
       </Card>
       <br />
 
-      <Card border="success" style={{ width: '18rem' }}>
+      <Card border="success" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
         <Card.Header>Weight</Card.Header>
         <Card.Body>
           <Card.Title>80kg</Card.Title>
@@ -31,7 +31,7 @@ export const UserHome = (props) => {
       </Card>
       <br />
 
-      <Card border="danger" style={{ width: '18rem' }}>
+      <Card border="danger" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
         <Card.Header>Blood pressure</Card.Header>
         <Card.Body>
           <Card.Title>110/80mmHg</Card.Title>
@@ -40,7 +40,7 @@ export const UserHome = (props) => {
       </Card>
       <br />
 
-      <Card border="warning" style={{ width: '18rem' }}>
+      <Card border="warning" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
         <Card.Header>VO2 Max</Card.Header>
         <Card.Body>
           <Card.Title>45.4</Card.Title>
@@ -49,7 +49,7 @@ export const UserHome = (props) => {
       </Card>
       <br />
 
-      <Card border="info" style={{ width: '18rem' }}>
+      <Card border="info" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
         <Card.Header>Cholesterol</Card.Header>
         <Card.Body>
           <Card.Title>198</Card.Title>
