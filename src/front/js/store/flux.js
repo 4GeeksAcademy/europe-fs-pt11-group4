@@ -37,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					);
 					if (response.ok) {
 						const data = await response.json()
-						setStore({ authToken: data.token });
+						setStore({ authToken: data.token, user: data });
 						navigate("/private")
 						return true
 					}

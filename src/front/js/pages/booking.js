@@ -1,69 +1,82 @@
-import React, {  useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useForm } from "../hooks/useform";
+import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 export const Booking = () => {
+    const { store, actions } = useContext(Context);
+    
     const navigate = useNavigate();
 
+    const [startDate, setStartDate] = useState(new Date());
+    let handleColor = (time) => {
+        return time.getHours() > 12 ? "text-success" : "text-error";
+      };
+    
+    useEffect(() =>{
+		fetch(process.env.BACKEND_URL +"/api/doctors")
+		.then((result) => result.json())
+		.then((data) => actions.setDoctorData(data));
+	}, []);
 
-    const [inputValues, handleInputChange] = useForm({
-        name:'',
-        dob:'',
-        email:'',
-        password: '',
-        password2: '',
+
+    const [values, handleInputChange] = useForm({
+        user_id: store.user.user_id,
+        doctor_id:'',
+        time:'',
+        user_comment:'',
     })
 
-    const { name, dob, email, password, password2 } = inputValues  
+    console.log(values)
+
+    const { user_id, doctor_id, time, user_comment } = values  
     
     const [error, setError] = useState({
-        name: false,
-        dob: false,
-        email: false,
-        password: false,
-        password2: false
+        user_id: false,
+        doctor_id: false,
+        time: false,
+        user_comment: false,
     })
 
     const errorStyle = {
         borderColor: "red",
     };
 
-const createUser = async (event) => {
+const createAppointment = async (event) => {
     event.preventDefault();
     setError({
-        name: name === "",
-        dob: dob === "",
-        email: email === "",
-        password: password === "",
-        password2: password2 === "" || password !== password2
+        user_id: user_id === "",
+        doctor_id: doctor_id === "",
+        time: time === "",
+        user_comment: user_comment === "",
     });
-    if (password !== password2) {
-        alert("The passwords don't match!!!");
-        return;
-    }
     if (
-        name !== '' &&
-        dob !== '' &&
-        email !== '' &&
-        password !== '' &&
-        password2 !== ''
-    ){
+        user_id !== '' &&
+        doctor_id !== '' &&
+        time !== '' &&
+        user_comment !== ''
+        ){
        try {
-         const response = await fetch(process.env.BACKEND_URL+'/api/signup',{
+         const response = await fetch(process.env.BACKEND_URL+'/api/booking',{
             method: 'POST',
             body: JSON.stringify({
-                name: name,
-                dob: dob,
-                email: email,
-                password: password
+                user_id: store.user.user_id,
+                doctor_id: doctor_id,
+                time: time,
+                user_comment: user_comment
             }),
             headers: {
                 'Content-type': 'application/json',
             },
         })
         if (response.ok){
-            alert('Welcome')
+            alert('Appointment created successfully')
             navigate("/private")
             return true
         }
@@ -72,61 +85,65 @@ const createUser = async (event) => {
             console.log(error)
        }
     }
-
 }
-
-
 	return (
-
-
-		<div className="w-50 p-3">
-
-			<form>
-
-            <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.name ? errorStyle : {}} type="text" name="name" id="form3Example1f" className="form-control" value={name} onChange={handleInputChange} />
-                        {error.name && <div className="badge bg-danger text-wrap">Name is required</div>}
-                        <label className="form-label" htmlFor="form3Example3c">Your Name</label>
-                    </div>
+        <div className="container">
+            <div className="w-50 p-5 mx-auto border border-secondary">
+               
+                <h3 className="text-center mb-4">Consultation booking form</h3>
+                <div className="d-flex">
+                    <Form.Group className="mb-3 w-100" controlId="patientName">
+                        <Form.Label>Patient Name</Form.Label>
+                        <Form.Control type="patient name" placeholder="" defaultValue={store.user.name} />
+                    </Form.Group>
+                    <br />
+                    <Form.Group className="mb-3 flex-shrink-1" controlId="patientId">
+                        <Form.Label>Patient ID</Form.Label>
+                        <Form.Control type="patient id" placeholder="" defaultValue={store.user.user_id} />
+                    </Form.Group>
                 </div>
-                
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.dob ? errorStyle : {}} type="text" name="dob" id="form3Example1f" placeholder="dd-mm-yyyy" className="form-control" value={dob} onChange={handleInputChange} />
-                        {error.dob && <div className="badge bg-danger text-wrap">DOB is required</div>}
-                        <label className="form-label" htmlFor="form3Example3c">Your Date of Birth</label>
-                    </div>
-                </div>
-
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.email ? errorStyle : {}} type="email" name="email" id="form3Example1f" className="form-control" value={email} onChange={handleInputChange} />
-                        {error.email && <div className="badge bg-danger text-wrap">Email is required</div>}
-                        <label className="form-label" htmlFor="form3Example3c">Your Email</label>
-                    </div>
-                </div>
-
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.password ? errorStyle : {}} type="password" name="password" id="form3Example1h" className="form-control" value={password} onChange={handleInputChange} />
-                        {error.password && <div className="badge bg-danger text-wrap">Password is required</div>}
-                        <label className="form-label" htmlFor="form3Example4c">Password</label>
-                    </div>
-                </div>
-                <div className="d-flex flex-row align-items-center mb-4">
-
-                    <div className="form-outline flex-fill mb-0">
-                        <input type="password" name="password2" id="form3Example4cd" className="form-control" value={password2} onChange={handleInputChange} />
-                        <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
-                    </div>
-                </div>
-                <div className="d-flex flex-row align-items-center mb-4">
-				<button type="submit" className="btn btn-primary" onClick={createUser}>Submit</button>
-                </div>
-			</form>
-
-		</div>
-		
+                <br />
+                <Dropdown>
+                    <Form.Select aria-label="Default select example" name="doctor_id" value={doctor_id} onChange={handleInputChange}>
+                        <option>Select Doctor</option>
+                        {store.doctors.map((doctor) => {
+                            return (
+                                <option value= {doctor.id}>Dr. {doctor.name}, {doctor.specialty} ({doctor.price}€/hr)</option>
+                            );
+                        })}
+                    </Form.Select>   
+                </Dropdown>  
+                <br />
+                <br />
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Patient comments to the doctor</Form.Label>
+                    <Form.Control as="textarea" rows={3} name="user_comment" value={user_comment} onChange={handleInputChange} />
+                </Form.Group> 
+                <br />
+                <Form.Group className="mb-3" controlId="timeSelect" type="date"  name="time" value={time}>
+                    <DatePicker
+                        showTimeSelect
+                        selected={startDate}
+                        onChange={(date) => {
+                        setStartDate(date)
+                        handleInputChange({
+                            target:{
+                            name: "time",
+                            value: date.toJSON(),
+                        }
+                    })}}
+                        timeClassName={handleColor}
+                    />
+                </Form.Group>
+                <br />
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="I have read the terms and conditions" />
+                </Form.Group>
+                <br />
+                <Button variant="primary" type="submit" onClick={createAppointment}>
+                    Make appointment
+                </Button>
+            </div>
+        </div>
 	);
 };
