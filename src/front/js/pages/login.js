@@ -54,7 +54,7 @@ export const Login = () => {
 		<div className="container ">
             <div className="w-50 mx-auto border border-primary-subtle p-5">
                 <form>                               
-                    <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>Sign into your account</h5>
+                    <h5 className="fw-normal mb-3 pb-3 text-center" style={{ letterSpacing: "1px" }}>Sign in to myDoctor</h5>
                         <div className="form-outline mb-4">
                             <input type="email" id="form2Example17" className="form-control form-control-lg" name="email" value={email} onChange={handleInputChange} style={error.email ? errorStyle : {}} />
                             <label className="form-label" >Email address{error.email && <label className="text-danger text-opacity-50 fst-italic lh-1">Email is required</label>}</label>
