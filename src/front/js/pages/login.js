@@ -71,7 +71,7 @@ export const Login = () => {
                                     <p>Forgot Password?</p>
                                 </Link>
                             </div>
-                            <button className="btn btn-primary " type="button" onClick={loginUserRequest}>Login</button>
+                            <button className="btn btn-primary btn-lg " type="button" onClick={loginUserRequest}>Login</button>
 
                         </div>
 

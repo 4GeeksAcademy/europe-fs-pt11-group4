@@ -3,7 +3,7 @@ import { FetchReport } from "../hooks/fetchReport";
 import "../../styles/table.css";
 
 const Table = ({ headers }) => {
-  const api = "https://symmetrical-zebra-wwrjggpv757cxjg-3001.app.github.dev/api/report";
+  const api = process.env.BACKEND_URL+'/api/report';
   const { error, loading, report } = FetchReport(api);
 
   if (loading) return <p>Loading...</p>;
