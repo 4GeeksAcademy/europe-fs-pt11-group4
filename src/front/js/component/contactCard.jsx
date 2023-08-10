@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactCard = (props) =>{
     return(
-        <div className="card">
+        <div className="card-contact">
             <div className="top">
                 <h2 className="title">{props.title}</h2>
                 <image className="circle-img" src={props.image} />

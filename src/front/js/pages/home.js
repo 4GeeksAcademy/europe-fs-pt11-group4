@@ -3,7 +3,7 @@ import doctor4ImageUrl from "../../img/doctor4.jpg";
 import doctor3ImageUrl from "../../img/doctor3.jpg";
 import "../../styles/home.css";
 import CardTwo from "../component/cardTwo.jsx";
-import Card from "../component/card.jsx";
+import CardOne from "../component/card.jsx";
 
 
 const dataTwo = [{titleTwo:"What makes myDoctor a One-Stop Healthcare App", descriptionTwo:"One place to get initial consultation, diagnosis, second opinion, treatment plans, e-prescriptions, follow up, medical reports in e-copy and much more", detailOne:"Top doctors across Europe are onboarded from various disciplines including General Physicians, Physiotherapists, Psychiatrists, Dentists, ENT Specialists, Gynecologists, Cardiologists, Dermatologists, Neurologists, Pediatricians, and many others."}, 
@@ -48,10 +48,9 @@ export const Home = () => {
 					/>)}
 				</div>
 				<div className="row gap-4 m-4">
-					{data.map(card =><Card
-						title={card.title}
+					{data.map(cardOne =><CardOne
 						imageUrl={doctor3ImageUrl}
-						description={card.description}
+						description={cardOne.description}
 						buttonLabel="Learn More"
 					/>)}
 				</div>

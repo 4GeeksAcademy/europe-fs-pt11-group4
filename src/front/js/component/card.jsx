@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./button.jsx";
 
 
-const Card = (props) => {
+const CardOne = (props) => {
 	return (
 		<div className="col">
 			<div className="card">
@@ -26,4 +26,4 @@ const Card = (props) => {
 };
 
 
-export default Card
+export default CardOne
