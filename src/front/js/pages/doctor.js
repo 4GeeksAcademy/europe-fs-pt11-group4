@@ -11,7 +11,7 @@ export const Doctors = (props) => {
 	console.log(store)
 
 	useEffect(() =>{
-		fetch(process.env.BACKEND_URL+'/api/doctors')
+		fetch(process.env.BACKEND_URL +"/api/doctors")
 		.then((result) => result.json())
 		.then((data) => actions.setDoctorData(data));
 	}, []);

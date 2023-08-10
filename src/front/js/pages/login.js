@@ -52,7 +52,7 @@ export const Login = () => {
 	return (
 
 		<div className="container ">
-            <div className="w-50 p-3 mx-auto border border-primary-subtle p-5">
+            <div className="w-50 mx-auto border border-primary-subtle p-5">
                 <form>                               
                     <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>Sign into your account</h5>
                         <div className="form-outline mb-4">
