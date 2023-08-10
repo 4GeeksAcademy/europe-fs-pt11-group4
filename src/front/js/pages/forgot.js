@@ -5,24 +5,26 @@ export const Forgot=()=>{
 
 	return (
     
-		<div className="container text-center">
-			<h3>Forgot Your Password?</h3><br></br>
-            <h6>Please enter your registered e-mail here. We will send you a link to reset the password.</h6><br></br>
-			<form>
-				<div class="mb-3">
-					<label for="exampleInputEmail1" class="form-label">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</form>
+		<div className="container ">
+            <div className="w-50 p-3 mx-auto border border-primary-subtle p-5">
+					<h3>Forgot Your Password?</h3><br></br>
+					<h6>Please enter your registered e-mail here. We will send you a link to reset the password.</h6><br></br>
+				<form>
+					<div className="mb-3">
+						<label for="exampleInputEmail1" class="form-label">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+						<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+					</div>
+				</form>
 				
-			<hr className="my-4" />
+				<hr className="my-4" />
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						Back Home
+					</span>
+				</Link>
+			</div>
 		</div>
 	);
 };

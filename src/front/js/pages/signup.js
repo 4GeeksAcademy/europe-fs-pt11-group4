@@ -79,54 +79,57 @@ const createUser = async (event) => {
 	return (
 
 
-		<div className="w-50 p-3">
+	    <div className="container ">
+            <div className="w-50 p-3 mx-auto border border-primary-subtle p-5">
+                <form>  
 
-			<form>
-
-            <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.name ? errorStyle : {}} type="text" name="name" id="form3Example1f" className="form-control" value={name} onChange={handleInputChange} />
-                        {error.name && <div className="badge bg-danger text-wrap">Name is required</div>}
-                        <label className="form-label" htmlFor="form3Example3c">Your Name</label>
+                    <div className="d-flex flex-row align-items-center mb-4">
+                        <div className="form-outline flex-fill mb-0">
+                            <input style={error.name ? errorStyle : {}} type="text" name="name" id="form3Example1f" className="form-control" value={name} onChange={handleInputChange} />
+                            {error.name && <div className="badge bg-danger text-wrap">Name is required</div>}
+                            <label className="form-label" htmlFor="form3Example3c">Your Name</label>
+                        </div>
                     </div>
-                </div>
                 
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.dob ? errorStyle : {}} type="text" name="dob" id="form3Example1f" placeholder="dd-mm-yyyy" className="form-control" value={dob} onChange={handleInputChange} />
-                        {error.dob && <div className="badge bg-danger text-wrap">DOB is required</div>}
-                        <label className="form-label" htmlFor="form3Example3c">Your Date of Birth</label>
+                    <div className="d-flex flex-row align-items-center mb-4">
+                        <div className="form-outline flex-fill mb-0">
+                            <input style={error.dob ? errorStyle : {}} type="text" name="dob" id="form3Example1f" placeholder="dd-mm-yyyy" className="form-control" value={dob} onChange={handleInputChange} />
+                            {error.dob && <div className="badge bg-danger text-wrap">DOB is required</div>}
+                            <label className="form-label" htmlFor="form3Example3c">Your Date of Birth</label>
+                        </div>
                     </div>
-                </div>
 
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.email ? errorStyle : {}} type="email" name="email" id="form3Example1f" className="form-control" value={email} onChange={handleInputChange} />
-                        {error.email && <div className="badge bg-danger text-wrap">Email is required</div>}
-                        <label className="form-label" htmlFor="form3Example3c">Your Email</label>
+                    <div className="d-flex flex-row align-items-center mb-4">
+                        <div className="form-outline flex-fill mb-0">
+                            <input style={error.email ? errorStyle : {}} type="email" name="email" id="form3Example1f" className="form-control" value={email} onChange={handleInputChange} />
+                            {error.email && <div className="badge bg-danger text-wrap">Email is required</div>}
+                            <label className="form-label" htmlFor="form3Example3c">Your Email</label>
+                        </div>
                     </div>
-                </div>
 
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <input style={error.password ? errorStyle : {}} type="password" name="password" id="form3Example1h" className="form-control" value={password} onChange={handleInputChange} />
-                        {error.password && <div className="badge bg-danger text-wrap">Password is required</div>}
-                        <label className="form-label" htmlFor="form3Example4c">Password</label>
+                    <div className="d-flex flex-row align-items-center mb-4">
+                        <div className="form-outline flex-fill mb-0">
+                            <input style={error.password ? errorStyle : {}} type="password" name="password" id="form3Example1h" className="form-control" value={password} onChange={handleInputChange} />
+                            {error.password && <div className="badge bg-danger text-wrap">Password is required</div>}
+                            <label className="form-label" htmlFor="form3Example4c">Password</label>
+                        </div>
                     </div>
-                </div>
-                <div className="d-flex flex-row align-items-center mb-4">
 
-                    <div className="form-outline flex-fill mb-0">
-                        <input type="password" name="password2" id="form3Example4cd" className="form-control" value={password2} onChange={handleInputChange} />
-                        <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
+                    <div className="d-flex flex-row align-items-center mb-4">
+
+                        <div className="form-outline flex-fill mb-0">
+                            <input type="password" name="password2" id="form3Example4cd" className="form-control" value={password2} onChange={handleInputChange} />
+                            <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
+                        </div>
                     </div>
-                </div>
-                <div className="d-flex flex-row align-items-center mb-4">
-				<button type="submit" className="btn btn-primary" onClick={createUser}>Submit</button>
-                </div>
-			</form>
 
-		</div>
+                    <div className="d-flex flex-row align-items-center mb-4">
+				        <button type="submit" className="btn btn-primary btn-lg" onClick={createUser}>Submit</button>
+                    </div>
+			    </form>
+
+		    </div>
+        </div>
 		
 	);
 };
