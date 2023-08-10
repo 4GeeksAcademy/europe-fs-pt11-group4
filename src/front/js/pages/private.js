@@ -16,6 +16,7 @@ export const Private = () => {
 
 	return (
 		<div className="container">
+			{console.log(store)}
 			<Tabs>
 				<TabList>
 					<Tab>
@@ -36,7 +37,7 @@ export const Private = () => {
 				</TabList>
 
 				<TabPanel>
-					<h2>Welcome back John! </h2>
+					<h2>Welcome back {store.user.name.split(" ")[0]}! </h2>
 					<br />
 					<h4>Health Dashboard</h4>
 					<UserHome />

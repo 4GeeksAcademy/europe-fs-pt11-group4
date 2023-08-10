@@ -61,15 +61,12 @@ class Appointment(db.Model):
     time = db.Column(db.DateTime, unique=False, nullable=False)
     user_comment = db.Column(db.String(250), unique=False, nullable=True)
     report = db.relationship('Report', backref='appointment', lazy=True, uselist=False)
-    appointment_doctor= db.relationship("Doctor", overlaps="appointments,doctor")
-    appointment_user= db.relationship("User", overlaps="appointments,user")
     
-    def __init__(self, user_id, doctor_id, doctor, user, time):
+    def __init__(self, user_id, doctor_id, time, user_comment):
         self.user_id = user_id
         self.doctor_id = doctor_id
-        self.doctor= doctor
-        self.user= user
         self.time= time
+        self.user_comment= user_comment
 
     def __repr__(self):
         return f'<Appointment {self.user_id}>'
@@ -78,9 +75,9 @@ class Appointment(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
+            "doctor_id": self.doctor_id,
             "time": self.time,
-            "doctor": self.doctor.serialize(),
-            "user": self.user.serialize(),
+            "user_comment": self.user_comment,
             # do not serialize the password, its a security breach
         }
     
