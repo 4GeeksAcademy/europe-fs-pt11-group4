@@ -72,10 +72,10 @@ export const Private = () => {
 					<div className="d-flex">
 						<div className="flex-fill">
 							<ListGroup as="ol" numbered>
-								<ListGroup.Item as="li">Select doctor specialty <i class="fa-solid fa-magnifying-glass"></i></ListGroup.Item>
 								<ListGroup.Item as="li">Select doctor <i class="fa-solid fa-user-doctor"></i></ListGroup.Item>
+								<ListGroup.Item as="li">Add note to doctor about your appointment <i class="fa-regular fa-comment"></i></ListGroup.Item>
 								<ListGroup.Item as="li">Select date and time <i class="fa-regular fa-calendar-days"></i></ListGroup.Item>
-								<ListGroup.Item as="li">Add notes to the doctor about your appointment <i class="fa-regular fa-comment"></i></ListGroup.Item>
+								<ListGroup.Item as="li">Accept terms and conditions <i class="fa-solid fa-clipboard-check"></i></ListGroup.Item>
 							</ListGroup>
 						</div>
 						<div className="flex-fill">
@@ -84,7 +84,7 @@ export const Private = () => {
 					</div>
 					<br />
 					<Link to="/booking">
-						<Button variant="primary" size="lg"> Make a booking now</Button>
+						<Button variant="primary" size="lg">Book a consultation now</Button>
 					</Link>
 					
 				</TabPanel>

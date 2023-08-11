@@ -88,9 +88,9 @@ const createAppointment = async (event) => {
 }
 	return (
         <div className="container">
-            <div className="w-50 p-5 mx-auto border border-secondary">
+            <div className="w-50 p-5 mx-auto border border-secondary rounded">
                
-                <h3 className="text-center mb-4">Consultation booking form</h3>
+                <h3 className="text-center mb-4">Consultation booking</h3>
                 <div className="d-flex">
                     <Form.Group className="mb-3 w-100" controlId="patientName">
                         <Form.Label>Patient Name</Form.Label>
@@ -116,7 +116,7 @@ const createAppointment = async (event) => {
                 <br />
                 <br />
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Patient comments to the doctor</Form.Label>
+                    <Form.Label>Patient notes to the doctor</Form.Label>
                     <Form.Control as="textarea" rows={3} name="user_comment" value={user_comment} onChange={handleInputChange} />
                 </Form.Group> 
                 <br />
@@ -137,11 +137,11 @@ const createAppointment = async (event) => {
                 </Form.Group>
                 <br />
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="I have read the terms and conditions" />
+                    <Form.Check type="checkbox" label="I accept the terms and conditions" />
                 </Form.Group>
                 <br />
-                <Button variant="primary" type="submit" onClick={createAppointment}>
-                    Make appointment
+                <Button variant="primary w-100" type="submit" onClick={createAppointment}>
+                    Book consultation
                 </Button>
             </div>
         </div>
