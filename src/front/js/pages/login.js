@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 
 
+
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 
@@ -56,12 +57,12 @@ export const Login = () => {
                 <form>                               
                     <h5 className="fw-normal mb-3 pb-3 text-center" style={{ letterSpacing: "1px" }}>Sign in to myDoctor</h5>
                         <div className="form-outline mb-4">
-                            <input type="email" id="form2Example17" className="form-control form-control-lg" name="email" value={email} onChange={handleInputChange} style={error.email ? errorStyle : {}} />
+                            <input type="email" className="form-control form-control-lg" name="email" value={email} onChange={handleInputChange} style={error.email ? errorStyle : {}} />
                             <label className="form-label" >Email address{error.email && <label className="text-danger text-opacity-50 fst-italic lh-1">Email is required</label>}</label>
                         </div>
 
                         <div className="form-outline mb-4">
-                            <input type="password" id="form2Example27" className="form-control form-control-lg" name="password" value={password} onChange={handleInputChange} style={error.password ? errorStyle : {}} />
+                            <input type="password" className="form-control form-control-lg" name="password" value={password} onChange={handleInputChange} style={error.password ? errorStyle : {}} />
                             <label className="form-label" >Password {error.password && <label className="text-danger text-opacity-50 fst-italic lh-1">Password is required</label>}</label>
                         </div>
 

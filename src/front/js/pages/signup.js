@@ -3,6 +3,7 @@ import { useForm } from "../hooks/useform";
 import { Link, useNavigate } from "react-router-dom";
 
 
+
 export const SignUp = () => {
     const navigate = useNavigate();
 
@@ -85,33 +86,33 @@ const createUser = async (event) => {
                 <h5 className="fw-normal mb-3 pb-3 text-center" style={{ letterSpacing: "1px" }}>Registration form</h5>
                     <div className="d-flex flex-row align-items-center mb-4">
                         <div className="form-outline flex-fill mb-0">
-                            <input style={error.name ? errorStyle : {}} type="text" name="name" id="form3Example1f" className="form-control" value={name} onChange={handleInputChange} />
+                            <input style={error.name ? errorStyle : {}} type="text" name="name" className="form-control" value={name} onChange={handleInputChange} />
                             {error.name && <div className="badge bg-danger text-wrap">Name is required</div>}
-                            <label className="form-label" htmlFor="form3Example3c">Name</label>
+                            <label className="form-label">Name</label>
                         </div>
                     </div>
                 
                     <div className="d-flex flex-row align-items-center mb-4">
                         <div className="form-outline flex-fill mb-0">
-                            <input style={error.dob ? errorStyle : {}} type="text" name="dob" id="form3Example1f" placeholder="dd-mm-yyyy" className="form-control" value={dob} onChange={handleInputChange} />
+                            <input style={error.dob ? errorStyle : {}} type="text" name="dob" placeholder="dd-mm-yyyy" className="form-control" value={dob} onChange={handleInputChange} />
                             {error.dob && <div className="badge bg-danger text-wrap">DOB is required</div>}
-                            <label className="form-label" htmlFor="form3Example3c">Date of Birth</label>
+                            <label className="form-label">Date of Birth</label>
                         </div>
                     </div>
 
                     <div className="d-flex flex-row align-items-center mb-4">
                         <div className="form-outline flex-fill mb-0">
-                            <input style={error.email ? errorStyle : {}} type="email" name="email" id="form3Example1f" className="form-control" value={email} onChange={handleInputChange} />
+                            <input style={error.email ? errorStyle : {}} type="email" name="email" className="form-control" value={email} onChange={handleInputChange} />
                             {error.email && <div className="badge bg-danger text-wrap">Email is required</div>}
-                            <label className="form-label" htmlFor="form3Example3c">Email</label>
+                            <label className="form-label">Email</label>
                         </div>
                     </div>
 
                     <div className="d-flex flex-row align-items-center mb-4">
                         <div className="form-outline flex-fill mb-0">
-                            <input style={error.password ? errorStyle : {}} type="password" name="password" id="form3Example1h" className="form-control" value={password} onChange={handleInputChange} />
+                            <input style={error.password ? errorStyle : {}} type="password" name="password" className="form-control" value={password} onChange={handleInputChange} />
                             {error.password && <div className="badge bg-danger text-wrap">Password is required</div>}
-                            <label className="form-label" htmlFor="form3Example4c">Password</label>
+                            <label className="form-label">Password</label>
                         </div>
                     </div>
 
@@ -119,7 +120,7 @@ const createUser = async (event) => {
 
                         <div className="form-outline flex-fill mb-0">
                             <input type="password" name="password2" id="form3Example4cd" className="form-control" value={password2} onChange={handleInputChange} />
-                            <label className="form-label" htmlFor="form3Example4cd">Repeat password</label>
+                            <label className="form-label">Repeat password</label>
                         </div>
                     </div>
 

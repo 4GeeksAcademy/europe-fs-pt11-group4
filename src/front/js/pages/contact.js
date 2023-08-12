@@ -9,7 +9,7 @@ export const Contact=()=>{
 
 	return (
     
-		<div className="container text-center bg-info p-3">
+		<div className="container text-center bg-light p-3">
 			<h2>Contact Us</h2><br></br>
             <h4>We are interested in hearing from you.</h4><br></br>
                 <div className="row d-flex justify-content-between m-4">
@@ -36,7 +36,7 @@ export const Contact=()=>{
 
                 <Link to="/">
                     <span className="btn btn-primary btn-lg btn-block mb-4" href="#" role="button">
-                        Back home
+                        Back Home
                     </span>
                 </Link>
 			

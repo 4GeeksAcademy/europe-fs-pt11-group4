@@ -18,8 +18,8 @@ const Button = ({ text, backgroundColor, color, buttonFunc }) => {
   };
 
   Button.defaultProps = {
-    text: "Click Me!",
-    backgroundColor: "green",
+    text: "Click!",
+    backgroundColor: "blue",
     color: "white",
   };
 
