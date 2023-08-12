@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./button.jsx";
 import { Link } from "react-router-dom";
 
 const CardTwo = (props) => {
@@ -42,10 +41,10 @@ const CardTwo = (props) => {
 							</a>
 						</h5>
 
-						<div className="offcanvas offcanvas-start bg-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+						<div className="offcanvas offcanvas-start bg-light" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 							<div className="offcanvas-header">
 								<h5 className="offcanvas-title" id="offcanvasExampleLabel">Specialities Available</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+								<button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 							</div>
 							<div className="offcanvas-body">
 								<div>
@@ -55,18 +54,18 @@ const CardTwo = (props) => {
 									<button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
 										including
 									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">General Physicians</a></li>
-										<li><a class="dropdown-item" href="#"> Physiotherapists</a></li>
-										<li><a class="dropdown-item" href="#">Psychiatrists</a></li>
-										<li><a class="dropdown-item" href="#">Dentists</a></li>
-										<li><a class="dropdown-item" href="#">ENT Specialists</a></li>
-										<li><a class="dropdown-item" href="#">Gynecologists</a></li>
-										<li><a class="dropdown-item" href="#">Cardiologists</a></li>
-										<li><a class="dropdown-item" href="#">Dermatologists</a></li>
-										<li><a class="dropdown-item" href="#">Neurologists</a></li>
-										<li><a class="dropdown-item" href="#">Pediatricians</a></li><br></br>
-										<li><a class="dropdown-item" href="#">and many others</a></li>
+									<ul className="dropdown-menu">
+										<li><a className="dropdown-item" href="#">General Physicians</a></li>
+										<li><a className="dropdown-item" href="#"> Physiotherapists</a></li>
+										<li><a className="dropdown-item" href="#">Psychiatrists</a></li>
+										<li><a className="dropdown-item" href="#">Dentists</a></li>
+										<li><a className="dropdown-item" href="#">ENT Specialists</a></li>
+										<li><a className="dropdown-item" href="#">Gynecologists</a></li>
+										<li><a className="dropdown-item" href="#">Cardiologists</a></li>
+										<li><a className="dropdown-item" href="#">Dermatologists</a></li>
+										<li><a className="dropdown-item" href="#">Neurologists</a></li>
+										<li><a className="dropdown-item" href="#">Pediatricians</a></li><br></br>
+										<li><a className="dropdown-item" href="#">and many others</a></li>
 									</ul>
 								</div>
 						</div>

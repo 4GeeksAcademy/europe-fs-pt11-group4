@@ -1,9 +1,8 @@
 import React from "react";
-import doctor4ImageUrl from "../../img/doctor4.jpg";
-import doctor3ImageUrl from "../../img/doctor3.jpg";
 import "../../styles/home.css";
 import CardTwo from "../component/cardTwo.jsx";
 import CardOne from "../component/card.jsx";
+import ReviewCard from "../component/reviewCard.jsx";
 
 
 const dataTwo = [{titleTwo:"A One-Stop Healthcare App", imageUrlTwo: "https://www.myhealthspace.in/assets/img/consult-min.jpg",descriptionTwo:"One place to get-", detailOne:"✅  initial consultation", detailTwo:"✅  diagnosis and treatment plan", detailThree:"✅  second opinion", detailFour:"✅  e-prescriptions and medical reports in e-copy", detailFive:"✅  and much more"}, 
@@ -15,6 +14,13 @@ const data = [{step: "STEP 1", title:"Select a Speciality", description:"From ou
 {step: "STEP 2", title:"Select a Doctor", description:"With our big team of doctors, you can select the doctor based on the first available appointment or the rate per session"},
 {step: "STEP 3", title:"Book an Online Consultation", description:"Choose according to your convenience the day and the time slot"},
 {step: "STEP 4", title:"Make Payment Online", description:"Check your booking details and pay online. You get an immediate confirmation"},]
+
+const dataThree =[{header:"Alexis", titleThree:"A wonderful experience", descriptionThree:"The process is very quick, the doctors have good availability. The doctors are very nice.", footer:"20/1/2023"},
+{header:"Johnson", titleThree:"Easy to use app", descriptionThree:"Booking an appointemnt with this app is easy. It saves a lot of hassles.", footer:"5/2/2023"},
+{header:"Raul", titleThree:"Worth recommending app", descriptionThree:"I am definitely going to recommend it to my friends and family. It has made life easier for me.", footer:"28/3/2023"},
+{header:"Sara", titleThree:"Excellent team of doctors", descriptionThree:"I had a chronic headache. Went to many doctors but to no avail. Doctor Jacob did correct diagnosis and now I have so much relief!", footer:"7/5/2023"},
+{header:"Sonya", titleThree:"Better than any such app around", descriptionThree:"I am German. The app helped me find a German speking doctor. It was so much easier for me explain my condition to him and ask my questions.", footer:"30/7/2023"},
+]
 
 
 export const Home = () => {
@@ -64,6 +70,22 @@ export const Home = () => {
 								description={cardOne.description}
 							/>)}
 						</div>
+					</div>
+				</div>
+
+				<div className="container bg-light border-light mt-5 overflow-auto  p-4">
+					<div className="row">
+						<h4 className="display-5 text-center">What Our Users Have To Say</h4><br></br>
+						<h4 className="text-success text-center">We have more than 1000 5-Star reviews!</h4><br></br>
+							<div className="row gap-4 m-4">
+							{dataThree.map(reviewCard =><ReviewCard
+								header={reviewCard.header}
+								titleThree={reviewCard.titleThree}
+								descriptionThree={reviewCard.descriptionThree}
+								footer={reviewCard.footer}
+								
+								/>)}
+							</div>
 					</div>
 				</div>
 
