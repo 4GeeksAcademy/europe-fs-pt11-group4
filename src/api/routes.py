@@ -1,10 +1,13 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
+from flask import Flask, request, jsonify, url_for, Blueprint, redirect
 from api.models import db, User, Doctor, Report, Appointment
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+import os
+import stripe
+
 
 api = Blueprint('api', __name__)
 
@@ -100,3 +103,32 @@ def create_appointment():
         "msg": "Appointment created"
     }
     return jsonify(response_body), 201
+
+# This is your test secret API key.
+stripe.api_key = os.getenv('SECRET_KEY')
+
+@api.route('/create-checkout-session', methods=['POST'])
+def create_checkout_session():
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            line_items=[{
+                'price_data': {
+                    'currency': 'eur',
+                    'product_data': {
+                    'name': 'Appointment with Dr. Susana Lowes',
+                    },
+                    'unit_amount': 8900,
+                },
+                'quantity': 1,
+                }],
+            mode='payment',
+            success_url='https://effective-fiesta-wp66g9776v729554-3000.app.github.dev/success',
+            cancel_url='https://effective-fiesta-wp66g9776v729554-3000.app.github.dev/canceled',
+        )
+    except Exception as e:
+        return str(e)
+
+    return redirect(checkout_session.url, code=303)
+
+if __name__ == '__main__':
+    api.run(port=3000)
