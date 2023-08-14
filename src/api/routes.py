@@ -7,8 +7,7 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 import os
 import stripe
-# This is your test secret API key.
-stripe.api_key = 'sk_test_51NduiXL9RPBcrNRVgTVCZYITCnkYHfyFQxhPqPpv35TpIE83KrnxR6bJl4zWjhiA1vIdBF8dVojsQyqZfZW962aM00eOH08zld'
+
 
 api = Blueprint('api', __name__)
 
@@ -105,7 +104,8 @@ def create_appointment():
     }
     return jsonify(response_body), 201
 
-YOUR_DOMAIN = 'http://localhost:3001'
+# This is your test secret API key.
+stripe.api_key = os.getenv('SECRET_KEY')
 
 @api.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
@@ -131,4 +131,4 @@ def create_checkout_session():
     return redirect(checkout_session.url, code=303)
 
 if __name__ == '__main__':
-    api.run(port=3001)
+    api.run(port=3000)

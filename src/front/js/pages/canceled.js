@@ -1,18 +1,17 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
-export const Success = () => {
+export const Canceled = () => {
     const { store, actions } = useContext(Context);
 
 	return (
 			<div className="container">
-                <h3>Payment successful </h3>
+                <h3>Payment canceled </h3>
                 <br />
                 <br />
-                <h4>You will receive an email confirmation shortly</h4>
+                <h4>Please try again later</h4>
                 <br />
                 <h5>
-                Thanks for your payment and for using the myDoctor app
                 <br />
                 If you have any questions, please email &nbsp;
                 <a href="mailto:info@mydoctor.com">info@mydoctor.com</a>
