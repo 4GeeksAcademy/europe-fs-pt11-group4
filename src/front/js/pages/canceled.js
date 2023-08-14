@@ -5,7 +5,7 @@ export const Canceled = () => {
     const { store, actions } = useContext(Context);
 
 	return (
-			<div className="container">
+			<div className="container checkout-redirect">
                 <h3>Payment canceled </h3>
                 <br />
                 <br />
