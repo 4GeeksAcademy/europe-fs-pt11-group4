@@ -104,6 +104,14 @@ def create_appointment():
     }
     return jsonify(response_body), 201
 
+@api.route('/appointments', methods=['GET'])
+def handle_appointments():
+
+    appointments = Appointment.query.all()
+    all_appointments = list(map(lambda x: x.serialize(), appointments))
+
+    return jsonify(all_appointments), 200
+
 # This is your test secret API key.
 stripe.api_key = os.getenv('SECRET_KEY')
 
@@ -122,8 +130,8 @@ def create_checkout_session():
                 'quantity': 1,
                 }],
             mode='payment',
-            success_url='https://effective-fiesta-wp66g9776v729554-3000.app.github.dev/success',
-            cancel_url='https://effective-fiesta-wp66g9776v729554-3000.app.github.dev/canceled',
+            success_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/success',
+            cancel_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/canceled',
         )
     except Exception as e:
         return str(e)
