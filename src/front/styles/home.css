@@ -21,5 +21,9 @@ a{
 }
 
 .checkout-redirect {
-    min-height: 100vh;
+    min-height: 80vh;
+}
+
+.appointment-display {
+    min-height: 80vh;
 }

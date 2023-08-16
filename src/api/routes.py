@@ -112,8 +112,22 @@ def handle_appointments():
 
     return jsonify(all_appointments), 200
 
+@api.route('/appointments/<int:appointment_id>', methods=['DELETE'])
+def delete_appointment(appointment_id):
+    
+    appointment1 = Appointment.query.get(appointment_id)
+    if appointment1 is None:
+        raise APIException('appointment not found', status_code=404)
+    db.session.delete(appointment1)
+    db.session.commit()
+    appointments = Appointment.query.all()
+    all_appointments = list(map(lambda x: x.serialize(), appointments))
+    
+    return jsonify(all_appointments), 200
+
 # This is your test secret API key.
-stripe.api_key = os.getenv('SECRET_KEY')
+# print(os.getenv('SECRET_KEY'))
+stripe.api_key = 'sk_test_51NduiXL9RPBcrNRVgTVCZYITCnkYHfyFQxhPqPpv35TpIE83KrnxR6bJl4zWjhiA1vIdBF8dVojsQyqZfZW962aM00eOH08zld'
 
 @api.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
@@ -139,4 +153,4 @@ def create_checkout_session():
     return redirect(checkout_session.url, code=303)
 
 if __name__ == '__main__':
-    api.run(port=3000)
+    api.run(port=4242)

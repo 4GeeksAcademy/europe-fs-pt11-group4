@@ -29,9 +29,9 @@ export const Private = () => {
 					<Tab>
 						Upcoming consultations <i class="fa-solid fa-laptop-medical"></i>
 					</Tab>
-					<Tab>
+					{/* <Tab>
 						Medical reports <i class="fa-solid fa-notes-medical"></i>
-					</Tab>
+					</Tab> */}
 					<Tab>
 						Health channel <i class="fa-solid fa-stethoscope"></i>
 					</Tab>
@@ -43,21 +43,22 @@ export const Private = () => {
 					<h4>Health Dashboard</h4>
 					<UserHome />
 					<br />
-					<h4>Upcoming appointments</h4>
-					<Card border="dark" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
+					<br />
+					<h4>Next consultation</h4>
+					<Card border="info" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
 						<Card.Header>August</Card.Header>
 						<Card.Body>
 						<Card.Title>18 August 2023</Card.Title>
 						</Card.Body>
 					</Card>
 					<br />
-					<Card border="info" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
+					{/* <Card border="info" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
 						<Card.Header>September</Card.Header>
 						<Card.Body>
 						<Card.Title>None</Card.Title>
 						
 						</Card.Body>
-					</Card>
+					</Card> */}
 					<br />
 				</TabPanel>
 				<TabPanel>
@@ -85,11 +86,11 @@ export const Private = () => {
 				<TabPanel>
 					<Appointments />
 				</TabPanel>
-				<TabPanel>
+				{/* <TabPanel>
 					<h4>Medical appointment history and reports</h4>
 					<h4>Previous appointments</h4>
 					<h4>Reports from previous appointments</h4>
-				</TabPanel>
+				</TabPanel> */}
 				<TabPanel>
 					<h4>Health news</h4>
 					<h4>Health tips</h4>
