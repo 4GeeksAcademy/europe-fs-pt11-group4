@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			authToken: null,
 			user: null,
 			users: [],
+			appointments: [],
 		},
 		actions: {
 			login: async (email, password, navigate) => {
@@ -98,6 +99,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setDoctorData: (data) => {
 				const store = getStore();
 				setStore({ ...store, doctors: data });
+			},
+			setAppointmentData: (data) => {
+				const store = getStore();
+				setStore({ ...store, appointments: data });
 			},
 			getMessage: async () => {
 				try{

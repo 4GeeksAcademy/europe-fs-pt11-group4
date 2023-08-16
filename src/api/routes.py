@@ -104,7 +104,29 @@ def create_appointment():
     }
     return jsonify(response_body), 201
 
+@api.route('/appointments', methods=['GET'])
+def handle_appointments():
+
+    appointments = Appointment.query.all()
+    all_appointments = list(map(lambda x: x.serialize(), appointments))
+
+    return jsonify(all_appointments), 200
+
+@api.route('/appointments/<int:appointment_id>', methods=['DELETE'])
+def delete_appointment(appointment_id):
+    
+    appointment1 = Appointment.query.get(appointment_id)
+    if appointment1 is None:
+        raise APIException('appointment not found', status_code=404)
+    db.session.delete(appointment1)
+    db.session.commit()
+    appointments = Appointment.query.all()
+    all_appointments = list(map(lambda x: x.serialize(), appointments))
+    
+    return jsonify(all_appointments), 200
+
 # This is your test secret API key.
+# print(os.getenv('SECRET_KEY'))
 stripe.api_key = os.getenv('SECRET_KEY')
 
 @api.route('/create-checkout-session', methods=['POST'])
@@ -122,8 +144,8 @@ def create_checkout_session():
                 'quantity': 1,
                 }],
             mode='payment',
-            success_url='https://effective-fiesta-wp66g9776v729554-3000.app.github.dev/success',
-            cancel_url='https://effective-fiesta-wp66g9776v729554-3000.app.github.dev/canceled',
+            success_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/success',
+            cancel_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/canceled',
         )
     except Exception as e:
         return str(e)
@@ -131,4 +153,4 @@ def create_checkout_session():
     return redirect(checkout_session.url, code=303)
 
 if __name__ == '__main__':
-    api.run(port=3000)
+    api.run(port=4242)
