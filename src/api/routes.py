@@ -127,7 +127,7 @@ def delete_appointment(appointment_id):
 
 # This is your test secret API key.
 # print(os.getenv('SECRET_KEY'))
-stripe.api_key = 'sk_test_51NduiXL9RPBcrNRVgTVCZYITCnkYHfyFQxhPqPpv35TpIE83KrnxR6bJl4zWjhiA1vIdBF8dVojsQyqZfZW962aM00eOH08zld'
+stripe.api_key = os.getenv('SECRET_KEY')
 
 @api.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
