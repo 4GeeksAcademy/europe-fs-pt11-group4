@@ -39,14 +39,25 @@ export const Appointments = (props) => {
 		.catch(error => console.log('Error deleting appointment', error))   
 	}
 
+    const formatDateTime = (dateTimeString) => {
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: 'numeric', 
+            minute: 'numeric', 
+            timeZoneName: 'short' 
+        };
+        return new Date(dateTimeString).toLocaleString(undefined, options);
+    };
+
 	return (
-        
-		<div className="container appointment-display">
+		<div className="container footer-eighty">
             {((store.appointments.length) === 0) ? <h4>You have no upcoming consultations</h4> :
             <Table striped hover>
                     <thead>
                         <tr>
-                        <th>Date</th>
+                        <th>Date and time</th>
                         <th>Doctor</th>
                         <th>Reason</th>
                         <th>Cost</th>
@@ -58,7 +69,7 @@ export const Appointments = (props) => {
                         return (
                             <tbody key={appointment.id}>
                                 <tr>
-                                <td>{appointment.time}</td>
+                                <td>{formatDateTime(appointment.time)}</td>
                                 {store.doctors.map((doctor) => {
                                     if (doctor.id === appointment.doctor_id){
                                         return (

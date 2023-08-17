@@ -5,7 +5,7 @@ export const Success = () => {
     const { store, actions } = useContext(Context);
 
 	return (
-			<div className="container checkout-redirect">
+			<div className="container footer-eighty">
                 <h3>Payment successful </h3>
                 <br />
                 <br />

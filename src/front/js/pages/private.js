@@ -16,7 +16,7 @@ export const Private = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container">
+		<div className="container footer-eighty">
 			{console.log(store)}
 			<Tabs>
 				<TabList>
@@ -29,37 +29,14 @@ export const Private = () => {
 					<Tab>
 						Upcoming consultations <i class="fa-solid fa-laptop-medical"></i>
 					</Tab>
-					{/* <Tab>
-						Medical reports <i class="fa-solid fa-notes-medical"></i>
-					</Tab> */}
 					<Tab>
 						Health channel <i class="fa-solid fa-stethoscope"></i>
 					</Tab>
 				</TabList>
-
 				<TabPanel>
 					<h2>Welcome back {store.user.name.split(" ")[0]}! </h2>
 					<br />
-					<h4>Health Dashboard</h4>
-					<UserHome />
-					<br />
-					<br />
-					<h4>Next consultation</h4>
-					<Card border="info" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
-						<Card.Header>August</Card.Header>
-						<Card.Body>
-						<Card.Title>18 August 2023</Card.Title>
-						</Card.Body>
-					</Card>
-					<br />
-					{/* <Card border="info" style={{ width: '18rem', boxShadow: "3px 3px 3px #9E9E9E" }}>
-						<Card.Header>September</Card.Header>
-						<Card.Body>
-						<Card.Title>None</Card.Title>
-						
-						</Card.Body>
-					</Card> */}
-					<br />
+					<UserHome />	
 				</TabPanel>
 				<TabPanel>
 					<Doctors />
@@ -81,19 +58,12 @@ export const Private = () => {
 					<Link to="/booking">
 						<Button variant="primary" size="lg">Book a consultation now</Button>
 					</Link>
-					
 				</TabPanel>
 				<TabPanel>
 					<Appointments />
 				</TabPanel>
-				{/* <TabPanel>
-					<h4>Medical appointment history and reports</h4>
-					<h4>Previous appointments</h4>
-					<h4>Reports from previous appointments</h4>
-				</TabPanel> */}
 				<TabPanel>
 					<h4>Health news</h4>
-					<h4>Health tips</h4>
 				</TabPanel>
 			</Tabs>
 		</div>
