@@ -14,7 +14,7 @@ export const AboutUs=()=>{
 
             <div className="text-center p-4">
                 <h1>About Us</h1><br></br>
-                <h5>At myDoctor, we believe in providing prompt and convenient care to all our patients. 
+                <h5>At myDoctor, we believe in providing prompt and convenient care to all our users. 
                     That's why we offer online medical services through our app, providing the relief you need without the hassle of traveling to a doctor's office. 
                     myDoctor App simplifies communication with doctors all over EU.
                     We build trust between doctors and patients every day, so that you get the best service.
@@ -38,10 +38,7 @@ export const AboutUs=()=>{
                             />)}
                         </div>
                 </div>
-
-            
-    </div>
-
+        </div>
 
     );
 };

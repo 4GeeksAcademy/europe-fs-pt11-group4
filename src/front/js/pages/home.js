@@ -5,8 +5,8 @@ import CardOne from "../component/card.jsx";
 import ReviewCard from "../component/reviewCard.jsx";
 
 
-const dataTwo = [{titleTwo:"A One-Stop Healthcare App", imageUrlTwo: "https://www.myhealthspace.in/assets/img/consult-min.jpg",descriptionTwo:"One place to get-", detailOne:"✅  initial consultation", detailTwo:"✅  diagnosis and treatment plan", detailThree:"✅  second opinion", detailFour:"✅  e-prescriptions and medical reports in e-copy", detailFive:"✅  and much more"}, 
-{titleTwo:"Why Choose Us", imageUrlTwo: "https://www.riomed.com/wp-content/uploads/2021/11/blogpost.jpg",descriptionTwo:"We are committed to providing effiecient, reliable and affordable digital healthcare services.", detailOne: "We combine world-class technology and top-rated doctors", detailTwo:"We bring experts from all fields of medicine at one place", detailThree: "On our team are doctors from all over Europe. No more language problems, no more geographical limitations"},
+const dataTwo = [{titleTwo:"A One-Stop Healthcare App", imageUrlTwo: "https://cdn.create.vista.com/api/media/small/201294564/stock-photo-top-view-stethoscope-different-medicines-blue-surface",descriptionTwo:"One place to get-", detailOne:"✅  initial consultation", detailTwo:"✅  diagnosis and treatment plan", detailThree:"✅  second opinion", detailFour:"✅  e-prescriptions and medical reports in e-copy", detailFive:"✅  and much more"}, 
+{titleTwo:"Why Choose Us", imageUrlTwo: "https://st2.depositphotos.com/3662505/8811/i/450/depositphotos_88116830-stock-photo-doctors-in-hospital.jpg",descriptionTwo:"We are committed to providing efficient, reliable and affordable digital healthcare services.", detailOne: "We combine world-class technology and top-rated doctors", detailTwo:"We bring experts from all fields of medicine at one place", detailThree: "On our team are doctors from all over Europe. No more language problems, no more geographical limitations"},
 {titleTwo:"What  Do We Offer", imageUrlTwo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKP9wGQrpXu5Ge_KbguhCsoqusqGJMZ4T7wA&usqp=CAU", descriptionTwo:"", detailOne:"✅  High quality video calls", detailTwo:"✅  Medical reports in soft copy", detailThree: "✅  e-prescription to get your medicines from any pharmacy", detailFour: "✅  Assurance that all your data is safe with us"},
  ,]
 
@@ -19,7 +19,7 @@ const dataThree =[{header:"Alexis", titleThree:"A wonderful experience", descrip
 {header:"Johnson", titleThree:"Easy to use app", descriptionThree:"Booking an appointemnt with this app is easy. It saves a lot of hassles.", footer:"5/2/2023"},
 {header:"Raul", titleThree:"Worth recommending app", descriptionThree:"I am definitely going to recommend it to my friends and family. It has made life easier for me.", footer:"28/3/2023"},
 {header:"Sara", titleThree:"Excellent team of doctors", descriptionThree:"I had a chronic headache. Went to many doctors but to no avail. Doctor Jacob did correct diagnosis and now I have so much relief!", footer:"7/5/2023"},
-{header:"Sonya", titleThree:"Better than any such app around", descriptionThree:"I am German. The app helped me find a German speking doctor. It was so much easier for me explain my condition to him and ask my questions.", footer:"30/7/2023"},
+{header:"Sonya", titleThree:"Better than any such app around", descriptionThree:"The app helped me find a German speaking doctor. It was so much easier for me explain my condition to him and ask my questions.", footer:"30/7/2023"},
 ]
 
 
@@ -62,7 +62,7 @@ export const Home = () => {
 				<div className="container ">
 					<div className="row">
 						<h2 className="display-4 text-center">How It Works</h2><br></br>
-						<h4 className="text-success text-center">Say goodbye to the inconvenience and stress of traditional docotor visits. In four esay steps book an appointment right from where you are!</h4><br></br>
+						<h4 className="text-success text-center">Say goodbye to the inconvenience and stress of traditional docotor visits. In four easy steps book an appointment right from where you are!</h4><br></br>
 						<div className="row gap-4 m-4">
 							{data.map(cardOne =><CardOne
 								step={cardOne.step}

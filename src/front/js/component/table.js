@@ -10,25 +10,24 @@ const Table = ({ headers }) => {
   if (error) return <p>Error: {error.message}</p>;
   if (!report) return null;
   return (
-    <table>
-      <thead>
-        <tr>
-          {headers.map((header, index) => (
-            <th key={index}>{header.title}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {report.map((report, index) => (
-          <tr>
-          <td key={index}>{report.appointments.doctor.name}</td>
-          <td key={index}>{report.appointments.time}</td>
-          <td key={index}>{report.doctor_comment}</td>
-          </tr>
-        ))}
-        
-      </tbody>
-    </table>
+      <table>
+          <thead>
+              <tr>
+                {headers.map((header, index) => (
+                  <th key={index}>{header.title}</th>
+                ))}
+              </tr>
+          </thead>
+          <tbody>
+              {report.map((report, index) => (
+                <tr>
+                  <td key={index}>{report.appointments.doctor.name}</td>
+                  <td key={index}>{report.appointments.time}</td>
+                  <td key={index}>{report.doctor_comment}</td>
+                </tr>
+              ))}
+          </tbody>
+      </table>
   );
 };
 

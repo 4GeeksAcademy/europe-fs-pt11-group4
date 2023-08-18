@@ -9,9 +9,9 @@ export const Report = () => {
   ];
 
   return (
-    <div className="Container">
-      <Table headers={headers} />
-    </div>
+      <div className="Container">
+        <Table headers={headers} />
+      </div>
   );
 }
 

@@ -3,43 +3,47 @@ import { Link } from "react-router-dom";
 
 const CardTwo = (props) => {
 	return (
-		<div className="card border border-secondary-subtle rounded bg-light" key={props.idx}>
+		<div className="card border border-secondary-subtle rounded shadow bg-light" key={props.idx}>
 			{props.idx%2==0 ? (
 				<div className="row g-0 p-4">
-					<div className="col-4 mt-5">
-						<img src={props.imageUrlTwo} className="img-fluid rounded-start" alt="..."/>
+					<div className="col-sm-4 mt-5">
+						<img className="shadow" height="400" width="380" 
+						src={props.imageUrlTwo} />	
 					</div>
 					<div className="col-8">
 						<div className="text-start ms-5">
-
-						<h1 className="display-4">{props.titleTwo}</h1><br></br>
+							<h1 className="display-4">{props.titleTwo}</h1><br></br>
 								
 								<h3 className="text-success">
 									{props.descriptionTwo}
 								</h3><br></br> 
+
 								<div className="card-text h6">
 									{props.detailOne}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailTwo}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailThree}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailFour}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailFive}
 								</div>
-							
 						</div>
 
-						<h5 className="text-success p-5">To find out more<br></br>
-							<a className="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-								Click Me!
-							</a>
-						</h5>
+							<h5 className="text-success p-5">To find out more<br></br>
+								<a className="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+									Click Me!
+								</a>
+							</h5>
 
 						<div className="offcanvas offcanvas-start bg-light" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 							<div className="offcanvas-header">
@@ -68,44 +72,49 @@ const CardTwo = (props) => {
 										<li><a className="dropdown-item" href="#">and many others</a></li>
 									</ul>
 								</div>
-						</div>
+							</div>
 						</div>
             		</div>
 				</div>
-				):(
-				<div className="row g-0 p-4">
-					
-					<div className="col-8">
-						<div className="text-start ms-5">
 
-						<h1 className="display-4">{props.titleTwo}</h1><br></br>
+				):(
+
+				<div className="row g-0 p-4">	
+					<div className="col-sm-8">
+						<div className="text-start ms-5">
+							<h1 className="display-4">{props.titleTwo}</h1><br></br>
 								
 								<h3 className="text-success">
 									{props.descriptionTwo}
 								</h3> <br></br> 
+
 								<div className="card-text h6">
 									{props.detailOne}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailTwo}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailThree}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailFour}
 								</div>
+
 								<div className="card-text h6">
 									{props.detailFive}
 								</div>
-							
 						</div>
 						<h5 className="text-success p-5">To find out more
 							<Link to="/login" > Log In</Link>
 						</h5>
             		</div>
 					<div className="col-4 mt-5">
-						<img src={props.imageUrlTwo} className="img-fluid rounded-start" alt="..."/>
+						<img className="shadow" height="320" width="400" 
+						src={props.imageUrlTwo} />		
 					</div>
 				</div>
 				)}	

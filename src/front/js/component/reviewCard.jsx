@@ -4,7 +4,7 @@ const ReviewCard = (props) => {
 	return (
         
         <div className="col">
-			<div className="card">
+			<div className="card shadow bg-body rounded">
                 <div className="card-header bg-transparent border-success">{props.header}</div>
                     <div className="card-body text-success">
                         <h5 className="card-title">{props.titleThree}</h5>

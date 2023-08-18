@@ -15,19 +15,19 @@ export const Contact=()=>{
                 <div className="row d-flex justify-content-between m-4">
                     <div className="col p-3">
                         <img src={phoneImageUrl} style={{height: "34px", width:"32px"}}/>
-                        <h4 className="text-primary">+34 123456789</h4>
+                        <h5 className="text-primary">+34 123456789</h5>
                     </div>
-                    <div className="col border border-primary border-5 border-white border-top-0 border-end-0 border-bottom-0 p-3">
+                    <div className="col border border-primary border-5 border-info border-top-0 border-end-0 border-bottom-0 p-3">
                         <img src={whatsappImageUrl} style={{height: "34px", width:"32px"}}/>
-                        <h4 className="text-primary">+34 667788909</h4>
+                        <h5 className="text-primary">+34 667788909</h5>
                     </div>
-                    <div className="col border border-primary border-5 border-white border-top-0 border-end-0 border-bottom-0 p-3">
+                    <div className="col border border-primary border-5 border-info border-top-0 border-end-0 border-bottom-0 p-3">
                         <img src={locationImageUrl} style={{height: "34px", width:"32px"}}/>
-                        <h4 className="text-primary">Alcobendas, Madrid, Spain</h4>
+                        <h5 className="text-primary">Alcobendas, Madrid, Spain</h5>
                     </div>
-                    <div className="col border border-primary border-5 border-white border-top-0 border-end-0 border-bottom-0 p-3">
+                    <div className="col border border-primary border-5 border-info border-top-0 border-end-0 border-bottom-0 p-3">
                         <img src={mailImageUrl} style={{height: "34px", width:"32px"}}/>
-                        <h4 className="text-primary">info@mydoctor.com</h4>
+                        <h5 className="text-primary">info@mydoctor.com</h5>
                     </div>
                 </div>
 			

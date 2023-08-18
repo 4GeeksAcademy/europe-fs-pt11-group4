@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../component/button.jsx";
+import { Button } from 'react-bootstrap';
+
 
 export const Forgot=()=>{
 
@@ -12,7 +13,7 @@ export const Forgot=()=>{
 					<h6>Please enter your registered e-mail here. We will send you a link to reset the password.</h6><br></br>
 				<form>
 					<div className="mb-3">
-						<label for="exampleInputEmail1" className="form-label">Email address</label>
+						<label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
 						<input type="email" className="form-control" aria-describedby="emailHelp"/>
 						<div className="form-text">We'll never share your email with anyone else.</div>
 					</div>
@@ -21,7 +22,7 @@ export const Forgot=()=>{
 				<hr className="my-4" />
 
 				<Link to="/">
-				<Button text={"Back Home"} backgroundColor={"blue"} color={"White"} />
+				<button className="btnbtn btn-primary btn-lg">Back Home</button>
 				</Link>
 			</div>
 		</div>
