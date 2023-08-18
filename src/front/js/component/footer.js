@@ -5,7 +5,7 @@ export const Footer = () => (
 	
 	<footer className="footer mt-auto py-3 text-center static-bottom">
 		
-		<div className="d-flex justify-content-end">
+		<div className="d-flex justify-content-center">
 			<div className="m-3">
 				<Link to= "/">
 						<span>Home</span>
