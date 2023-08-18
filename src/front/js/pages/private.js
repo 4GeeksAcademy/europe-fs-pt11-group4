@@ -63,7 +63,7 @@ export const Private = () => {
 					<Appointments />
 				</TabPanel>
 				<TabPanel>
-					<h4>Health news</h4>
+					
 				</TabPanel>
 			</Tabs>
 		</div>
