@@ -19,6 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: null,
 			users: [],
 			appointments: [],
+			newsapi: [],
 		},
 		actions: {
 			login: async (email, password, navigate) => {
@@ -103,6 +104,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setAppointmentData: (data) => {
 				const store = getStore();
 				setStore({ ...store, appointments: data });
+			},
+			setChannelData: (data) => {
+				const store = getStore();
+				setStore({ ...store, newsapi: data });
 			},
 			getMessage: async () => {
 				try{
