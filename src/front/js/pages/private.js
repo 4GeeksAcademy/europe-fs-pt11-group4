@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import { Doctors } from "./doctor";
 import { Appointments } from "./appointment";
 import { UserHome } from "./userhome";
+import { Channel } from "./channel";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Button from 'react-bootstrap/Button';
@@ -63,7 +64,7 @@ export const Private = () => {
 					<Appointments />
 				</TabPanel>
 				<TabPanel>
-					
+					<Channel />
 				</TabPanel>
 			</Tabs>
 		</div>
