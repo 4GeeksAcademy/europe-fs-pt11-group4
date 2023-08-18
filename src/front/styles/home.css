@@ -20,3 +20,6 @@ a{
     text-decoration: none;
 }
 
+.footer-eighty {
+    min-height: 80vh;
+}

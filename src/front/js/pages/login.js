@@ -72,7 +72,7 @@ export const Login = () => {
                                     <p>Forgot Password?</p>
                                 </Link>
                             </div>
-                            <button className="btn btn-primary btn-lg" type="button" onClick={loginUserRequest}>Login</button>
+                            <button className="btn btn-primary w-100" type="button" onClick={loginUserRequest}>Login</button>
 
                         </div>
 
@@ -80,7 +80,7 @@ export const Login = () => {
                         
                         <div className="mb-3 ">
                             <Link to="/signup" >
-                                <h5>CREATE AN ACCOUNT</h5>
+                                <h5>Create an account</h5>
                             </Link>
                         </div>
 
