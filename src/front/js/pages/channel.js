@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Context } from "../store/appContext";
 
 export const Channel = () => {
-  const [data, setData] = useState([]);
+
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const Channel = () => {
         "action": "getArticles",
         "keyword": "medicine",
         "articlesPage": 1,
-        "articlesCount": 21,
+        "articlesCount": 99,
         "articlesSortBy": "date",
         "articlesSortByAsc": false,
         "articlesArticleBodyLen": -1,
@@ -25,10 +25,9 @@ export const Channel = () => {
         "forceMaxDataTimeWindow": 31
     };
     const headers = {
-        'Content-Type': 'application/json', // Set your desired content type
-        // Other headers here
+        'Content-Type': 'application/json',
     };
-    // Fetch data from the API
+   
     fetch(apiUrl, {
         method: 'POST',
         headers: headers,
@@ -51,7 +50,7 @@ export const Channel = () => {
                             <img variant="top" src={item.image} className="card-img-top" alt="..." style={{width: "100%", height: "180px", }}/>
                             <div className="card-body">
                                 <h5 className="card-title">{item.title}</h5>
-                                <a href={item.url} className="card-link">Read more</a>
+                                <a href={item.url} className="card-link" target="_blank">Read more</a>
                             </div>
                         </div>
                     </div>
