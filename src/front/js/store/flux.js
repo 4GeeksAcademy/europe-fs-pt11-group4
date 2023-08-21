@@ -93,7 +93,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			logOut: async (navigate) => {
-				setStore({ user: null, authToken: null })
+				setStore({ user: null, authToken: null });
+				sessionStorage.removeItem("token");
 				localStorage.clear()
 				navigate("/")
 			},
