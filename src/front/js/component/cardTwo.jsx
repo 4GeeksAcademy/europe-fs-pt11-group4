@@ -1,14 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const CardTwo = (props) => {
 	return (
-		<div className="card border border-secondary-subtle rounded shadow bg-light" key={props.idx}>
+		<div className="card border border-secondary-subtle rounded shadow " key={props.idx}>
 			{props.idx%2==0 ? (
 				<div className="row g-0 p-4">
 					<div className="col-sm-4 mt-5">
-						<img className="shadow" height="400" width="380" 
-						src={props.imageUrlTwo} />	
+						<img src={props.imageUrlTwo} className="img-fluid rounded-start" width="600"  height="1800" alt="..."/>
 					</div>
 					<div className="col-8">
 						<div className="text-start ms-5">
@@ -39,9 +37,9 @@ const CardTwo = (props) => {
 								</div>
 						</div>
 
-							<h5 className="text-success p-5">To find out more<br></br>
-								<a className="btn btn-primary w-50 mt-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-									Click Me!
+							<h5 className="text-success p-5">
+								<a  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+									Find out more
 								</a>
 							</h5>
 
@@ -108,13 +106,10 @@ const CardTwo = (props) => {
 									{props.detailFive}
 								</div>
 						</div>
-						<h5 className="text-success p-5">To find out more
-							<Link to="/login" > Log In</Link>
-						</h5>
+						<h5 className="text-success p-5"><a href="/login">Find out more</a></h5>
             		</div>
 					<div className="col-4 mt-5">
-						<img className="shadow" height="320" width="400" 
-						src={props.imageUrlTwo} />		
+						<img src={props.imageUrlTwo} className="img-fluid rounded-start" width="400"  height="900" alt="..."/>
 					</div>
 				</div>
 				)}	
