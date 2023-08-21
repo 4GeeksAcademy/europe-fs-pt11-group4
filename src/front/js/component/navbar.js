@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import myDoctorUrl from "../../img/mydoctor.png";
+import loggedUserIcon from "../../img/user.png";
 import "../../styles/home.css";
 
 export const Navbar = () => {
@@ -15,7 +16,22 @@ export const Navbar = () => {
 					<span className="brand h1">&nbsp;myDoctor</span>
 				</Link>
 				<div className="ml-auto">
-					{store.authToken ? <Link to="/"><button className="btn btn-outline-danger rounded-lg" onClick={() => actions.logOut()}>Logout</button></Link> :
+					{store.authToken 
+					? 
+					<div>
+						<li class="nav-item dropdown">
+							<span class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src={loggedUserIcon} alt="user" style={{ width: '35px' }} />
+							</span>
+							<ul className="dropdown-menu p-2">
+								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/private"><strong>User home <i class="fa-solid fa-house-chimney-user"></i></strong></Link></li>
+								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/booking"><strong>Book consultation <i class="fa-regular fa-calendar-check"></i></strong></Link></li>
+								<hr className="text-danger"></hr>
+								<li><Link to="/"><span className="text-danger" onClick={() => actions.logOut()}><strong>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></strong></span></Link></li>
+							</ul>
+        				</li>
+					</div>
+					:
 					<div>
 						<Link to="/login"><button className="btn btn-light rounded-lg">Login</button></Link>
 						&nbsp; 

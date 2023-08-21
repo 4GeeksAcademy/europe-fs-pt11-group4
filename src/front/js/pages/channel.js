@@ -11,6 +11,11 @@ export const Channel = () => {
     const requestBody = {
         "action": "getArticles",
         "keyword": "medicine",
+          "keywordOper": "and",
+            "lang": [
+                "eng",
+                "spa"
+            ],
         "articlesPage": 1,
         "articlesCount": 99,
         "articlesSortBy": "date",
