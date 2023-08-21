@@ -40,7 +40,7 @@ const CardTwo = (props) => {
 						</div>
 
 							<h5 className="text-success p-5">To find out more<br></br>
-								<a className="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+								<a className="btn btn-primary w-50 mt-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
 									Click Me!
 								</a>
 							</h5>

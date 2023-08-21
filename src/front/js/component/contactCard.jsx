@@ -7,13 +7,13 @@ const ContactCard = (props) =>{
                 <h2 className="title">{props.title}</h2>
                 <image className="circle-img" src={props.image} />
             </div>
-            <div className="bottom">
+            <div className="bottom ms-3">
                 <h4 className="role">{props.role}</h4>
                 <h5 className="info">{props.info}</h5>
-                <h4 className="email">{props.email}</h4>
-                <h4 className="phone">{props.phone}</h4>    
-            </div>
-            <button className="btn btn-primary">Contact</button>
+                <h5 className="email">{props.email}</h5>
+                <h5 className="phone">{props.phone}</h5>    
+            </div><br></br>
+            <button className="btn btn-primary w-100">Contact</button>
         </div>
     );
 }

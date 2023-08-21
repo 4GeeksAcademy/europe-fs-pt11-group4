@@ -46,7 +46,7 @@ export const FrequentlyAskedQuestions=()=>{
                 <hr className="my-4" />
     
                 <Link to="/">
-                    <span className="btn btn-primary btn-lg btn-block m-3" href="#" role="button">
+                    <span className="btn btn-primary w-50 m-3" href="#" role="button">
                         Back Home
                     </span>
                 </Link>

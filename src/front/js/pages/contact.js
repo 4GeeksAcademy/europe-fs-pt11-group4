@@ -35,7 +35,7 @@ export const Contact=()=>{
 			    <hr className="my-4" />
 
                 <Link to="/">
-                    <span className="btn btn-primary btn-lg btn-block mb-4" href="#" role="button">
+                    <span className="btn btn-primary w-75 mb-4" href="#" role="button">
                         Back Home
                     </span>
                 </Link>
