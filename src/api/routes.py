@@ -127,7 +127,7 @@ def delete_appointment(appointment_id):
 
 # This is your test secret API key.
 # print(os.getenv('SECRET_KEY'))
-stripe.api_key = os.getenv('SECRET_KEY')
+stripe.api_key = "sk_test_51NduiXL9RPBcrNRVgTVCZYITCnkYHfyFQxhPqPpv35TpIE83KrnxR6bJl4zWjhiA1vIdBF8dVojsQyqZfZW962aM00eOH08zld"
 
 @api.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
@@ -144,8 +144,8 @@ def create_checkout_session():
                 'quantity': 1,
                 }],
             mode='payment',
-            success_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/success',
-            cancel_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/canceled',
+            success_url='https://special-sniffle-5j66x4qqjv7h9jx-3000.app.github.dev/success',
+            cancel_url='https://special-sniffle-5j66x4qqjv7h9jx-3000.app.github.dev/canceled',
         )
     except Exception as e:
         return str(e)

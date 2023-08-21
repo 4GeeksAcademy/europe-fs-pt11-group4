@@ -40,14 +40,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.ok) {
 						const data = await response.json()
 						setStore({ authToken: data.token, user: data });
+						sessionStorage.setItem("token", data.token);
 						navigate("/private")
 						return true
 					}
 				} catch (error) {
-					console.log(error);
+					console.error("There has been an error logging in");
 				};
 				return false
 
+			},
+
+			syncTokenFromSessionStore: () => {
+				const token = sessionStorage.getItem("token");
+				console.log("Application just loaded, syncing the session storage token");
+				setStore ({ authToken: token });
 			},
 
 			getUser: async () => {
