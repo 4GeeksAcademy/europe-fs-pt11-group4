@@ -4,7 +4,7 @@ import "../../styles/contact.css";
 
 const contacts = [
     {title:"Jide", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "jide@test.com", phone: "123456789"},
-    {title:"Sanghmitra", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "smitra@test.com", phone: "123456789"}]
+    {title:"Smita", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "smitra@test.com", phone: "123456789"}]
 
     
 export const AboutUs=()=>{
