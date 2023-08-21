@@ -22,7 +22,7 @@ export const Forgot=()=>{
 				<hr className="my-4" />
 
 				<Link to="/">
-				<button className="btnbtn btn-primary btn-lg">Back Home</button>
+				<button className="btn btn-primary w-100">Back Home</button>
 				</Link>
 			</div>
 		</div>

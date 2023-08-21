@@ -4,7 +4,7 @@ import "../../styles/contact.css";
 
 const contacts = [
     {title:"Jide", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "jide@test.com", phone: "123456789"},
-    {title:"Sanghmitra", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "smitra@test.com", phone: "123456789"}]
+    {title:"Smita", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "smitra@test.com", phone: "123456789"}]
 
     
 export const AboutUs=()=>{
@@ -18,7 +18,6 @@ export const AboutUs=()=>{
                     That's why we offer online medical services through our app, providing the relief you need without the hassle of traveling to a doctor's office. 
                     myDoctor App simplifies communication with doctors all over EU.
                     We build trust between doctors and patients every day, so that you get the best service.
-
                 </h5>
             </div>
             <hr></hr>
