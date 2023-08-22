@@ -1,20 +1,29 @@
 import React, { useState, useEffect, useContext } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
-import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
 
-export const Doctors = (props) => {
+export const Doctors = () => {
 	const { store, actions } = useContext(Context);
-
+	const [uniqueSpecialties, setUniqueSpecialties] = useState([]);
+	const [selectedSpecialty, setSelectedSpecialty] = useState('');
+	
 	console.log(store)
 
 	useEffect(() =>{
 		fetch(process.env.BACKEND_URL +"/api/doctors")
-		.then((result) => result.json())
-		.then((data) => actions.setDoctorData(data));
-	}, []);
+			.then((result) => result.json())
+			.then((data) => {actions.setDoctorData(data);
+				const specialties = Array.from(new Set(data.map(doctor => doctor.specialty)));
+				setUniqueSpecialties(specialties);
+			})
+			.catch(error => console.error('Error fetching doctors from API:', error));
+		}, []);
+
+	const filteredDoctors = store.doctors.filter(doctor =>
+		selectedSpecialty === '' || doctor.specialty === selectedSpecialty
+	);
 
 	return (
 		<div className="container">
@@ -25,22 +34,21 @@ export const Doctors = (props) => {
 				<div>
 				<Dropdown>
 					<Dropdown.Toggle variant="primary" id="dropdown-basic">
-						Specialty
+					{selectedSpecialty || 'Select Specialty'}
 					</Dropdown.Toggle>
-
 					<Dropdown.Menu>
-						<Dropdown.Item href="#/action-1">Family medicine</Dropdown.Item>
-						<Dropdown.Item href="#/action-2">Pediatrician</Dropdown.Item>
-						<Dropdown.Item href="#/action-3">Cardiologist</Dropdown.Item>
-						<Dropdown.Item href="#/action-3">Psychiatrist</Dropdown.Item>
-						<Dropdown.Item href="#/action-3">Surgeon</Dropdown.Item>
+						{uniqueSpecialties.map((specialty) => {
+                            return (
+                                <Dropdown.Item key={specialty} href="" onClick={() => setSelectedSpecialty(specialty)}>{specialty}</Dropdown.Item>
+                            );
+                        })}
 					</Dropdown.Menu>
-					</Dropdown>
+				</Dropdown>
 				</div>
 			</div>
 			
 			<div className="list-group list-group-horizontal inline-scroll">
-				{store.doctors.map((doctor) => {
+				{filteredDoctors.map((doctor) => {
 					return (
 						<div key={doctor.id}>
 							<div className="card" style={{width: "18rem", marginRight: "15px"}}>
