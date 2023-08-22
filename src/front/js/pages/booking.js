@@ -11,7 +11,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export const Booking = () => {
     const { store, actions } = useContext(Context);
-    
+    const [uniqueSpecialties, setUniqueSpecialties] = useState([]);
+	const [selectedSpecialty, setSelectedSpecialty] = useState('');
     const navigate = useNavigate();
 
     const [startDate, setStartDate] = useState(new Date());
@@ -21,10 +22,17 @@ export const Booking = () => {
     
     useEffect(() =>{
 		fetch(process.env.BACKEND_URL +"/api/doctors")
-		.then((result) => result.json())
-		.then((data) => actions.setDoctorData(data));
-	}, []);
+			.then((result) => result.json())
+			.then((data) => {actions.setDoctorData(data);
+				const specialties = Array.from(new Set(data.map(doctor => doctor.specialty)));
+				setUniqueSpecialties(specialties);
+			})
+			.catch(error => console.error('Error fetching doctors from API:', error));
+		}, []);
 
+	const filteredDoctors = store.doctors.filter(doctor =>
+		selectedSpecialty === '' || doctor.specialty === selectedSpecialty
+	);
 
     const [values, handleInputChange] = useForm({
         user_id: store.user.user_id,
@@ -104,9 +112,22 @@ const createAppointment = async (event) => {
                 </div>
                 <br />
                 <Dropdown>
+					<Dropdown.Toggle className="w-100 text-start" variant="light" id="dropdown-basic">
+					{selectedSpecialty || 'Select Doctor Specialty'}
+					</Dropdown.Toggle>
+					<Dropdown.Menu>
+						{uniqueSpecialties.map((specialty) => {
+                            return (
+                                <Dropdown.Item key={specialty} onClick={() => setSelectedSpecialty(specialty)}>{specialty}</Dropdown.Item>
+                            );
+                        })}
+					</Dropdown.Menu>
+				</Dropdown>
+                <br />
+                <Dropdown>
                     <Form.Select aria-label="Default select example" name="doctor_id" value={doctor_id} onChange={handleInputChange}>
                         <option>Select Doctor</option>
-                        {store.doctors.map((doctor) => {
+                        {filteredDoctors.map((doctor) => {
                             return (
                                 <option value= {doctor.id}>Dr. {doctor.name}, {doctor.specialty} ({doctor.price}€/hr)</option>
                             );
@@ -116,7 +137,7 @@ const createAppointment = async (event) => {
                 <br />
                 <br />
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Patient notes to the doctor</Form.Label>
+                    <Form.Label>Reason for consultation</Form.Label>
                     <Form.Control as="textarea" rows={3} name="user_comment" value={user_comment} onChange={handleInputChange} />
                 </Form.Group> 
                 <br />
