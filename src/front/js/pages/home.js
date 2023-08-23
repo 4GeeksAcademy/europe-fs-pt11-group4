@@ -12,8 +12,8 @@ const dataTwo = [{titleTwo:"A One-Stop Healthcare App", imageUrlTwo: "https://cd
 
 const data = [{step: "STEP 1", title:"Select a Speciality", description:"From our team of experienced doctors select the specialization or if you are not sure, you can book an appointment with a GP"}, 
 {step: "STEP 2", title:"Select a Doctor", description:"With our big team of doctors, you can select the doctor based on the first available appointment or the rate per session"},
-{step: "STEP 3", title:"Book an Online Consultation", description:"Choose according to your convenience the day and the time slot"},
-{step: "STEP 4", title:"Make Payment Online", description:"Check your booking details and pay online. You get an immediate confirmation"},]
+{step: "STEP 3", title:"Book an Online Consultation", description:"Choose according to your convenience the day and the time slot. The doctors are available 24 hours a day. 7 days a week"},
+{step: "STEP 4", title:"Make Payment Online", description:"Check your booking details and pay online. You get an immediate confirmation. Without any hassle you are ready for the consultation"},]
 
 const dataThree =[{header:"Alexis", titleThree:"A wonderful experience", descriptionThree:"The process is very quick, the doctors have good availability. The doctors are very nice.", footer:"20/1/2023"},
 {header:"Johnson", titleThree:"Easy to use app", descriptionThree:"Booking an appointemnt with this app is easy. It saves a lot of hassles.", footer:"5/2/2023"},
@@ -30,7 +30,7 @@ export const Home = () => {
 			<div className="container ">
 				<div className="row mb-4">
 					<div className="col-lg-6">
-						<img className="shadow" height="500" width="550" 
+						<img className="shadow" height="500" width="100%" 
 						src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhlYWx0aHklMjBmYW1pbHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" />
 					</div>
 					<div className="col-lg-6">
@@ -62,11 +62,12 @@ export const Home = () => {
 				</div>
 			</div>
 
-				<div className="container ">
+				<div className="container">
+					<div className="col">
 					<div className="row mt-4">
 						<h2 className="display-4 text-center">How It Works</h2><br></br>
 						<h4 className="text-success text-center">Say goodbye to the inconvenience and stress of traditional docotor visits. In four easy steps book an appointment right from where you are!</h4><br></br>
-						<div className="row gap-4 m-4">
+						<div className="row-sm-12  gap-4 m-4">
 							{data.map(cardOne =><CardOne
 								step={cardOne.step}
 								title={cardOne.title}
@@ -75,11 +76,12 @@ export const Home = () => {
 						</div>
 					</div>
 				</div>
+				</div>
 
 				<div className="container bg-light border-light mt-5 overflow-auto  p-4">
 					<div className="row">
-						<h4 className="display-5 text-center">What Our Users Have To Say</h4><br></br>
-						<h4 className="text-success text-center">We have more than 1000 5-Star reviews!</h4><br></br>
+						<h4 className="row-sm-12 display-5 text-center">What Our Users Have To Say</h4><br></br>
+						<h4 className="row-sm-12 text-success text-center">We have more than 1000 5-Star reviews!</h4><br></br>
 							<div className="row gap-4 m-4 ms-1">
 							{dataThree.map(reviewCard =><ReviewCard
 								header={reviewCard.header}

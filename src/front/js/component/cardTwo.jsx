@@ -2,13 +2,13 @@ import React from "react";
 
 const CardTwo = (props) => {
 	return (
-		<div className="card border border-secondary-subtle rounded shadow " key={props.idx}>
+		<div className="col-12 card border border-secondary-subtle rounded shadow " key={props.idx}>
 			{props.idx%2==0 ? (
 				<div className="row g-0 p-4">
 					<div className="col-sm-4 mt-5">
-						<img src={props.imageUrlTwo} className="img-fluid rounded-start" width="600"  height="1800" alt="..."/>
+						<img src={props.imageUrlTwo} className="img-fluid rounded-start" alt="..."/>
 					</div>
-					<div className="col-8">
+					<div className="col-sm-8">
 						<div className="text-start ms-5">
 							<h1 className="display-4">{props.titleTwo}</h1><br></br>
 								
@@ -108,12 +108,12 @@ const CardTwo = (props) => {
 						</div>
 						<h5 className="text-success p-5"><a href="/login">Find out more</a></h5>
             		</div>
-					<div className="col-4 mt-5">
-						<img src={props.imageUrlTwo} className="img-fluid rounded-start" width="400"  height="900" alt="..."/>
+					<div className="col-sm-4 mt-5">
+						<img src={props.imageUrlTwo} className="img-fluid rounded-start" alt="..."/>
 					</div>
 				</div>
 				)}	
-		</div>		
+		</div>	
 	);
 };
 		
