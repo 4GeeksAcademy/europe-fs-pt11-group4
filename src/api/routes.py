@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint, redirect
 from api.models import db, User, Doctor, Report, Appointment
-from api.utils import generate_sitemap, APIException
+from api.utils import generate_sitemap, APIException, get_hash
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 import os
 import stripe
@@ -30,7 +30,7 @@ def create_user():
     if not email or not password or not name or not dob:
         return jsonify({ "msg": "No password or email or name or dob present." }), 400
     
-    new_user = User(email=email, password=password, name= name, dob=dob)
+    new_user = User(email=email, password=get_hash(password), name= name, dob=dob)
     db.session.add(new_user)
     db.session.commit()
 
@@ -44,7 +44,7 @@ def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     # Query your database for email and password
-    user = User.query.filter_by(email=email, password=password).first()
+    user = User.query.filter_by(email=email, password=get_hash(password)).first()
     if user is None:
         # the user was not found on the database
         return jsonify({"msg": "Bad email or password"}), 401
