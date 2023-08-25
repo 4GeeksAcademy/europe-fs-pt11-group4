@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			doctors: [],
 			message: null,
 			demo: [
 				{
@@ -13,14 +14,105 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			authToken: null,
+			user: null,
+			users: [],
+			appointments: [],
+			reports: [],
+			newsapi: [],
 		},
 		actions: {
+			login: async (email, password, navigate) => {
+				try {
+					const response = await fetch(
+						process.env.BACKEND_URL +"/api/token",
+						{
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({
+								"email": email,
+								"password": password
+							}),
+						}
+					);
+					if (response.ok) {
+						const data = await response.json()
+						setStore({ authToken: data.token, user: data });
+						sessionStorage.setItem("token", data.token);
+						navigate("/private")
+						return true
+					}
+				} catch (error) {
+					console.error("There has been an error logging in");
+				};
+				return false
+
+			},
+			syncTokenFromSessionStore: () => {
+				const token = sessionStorage.getItem("token");
+				console.log("Application just loaded, syncing the session storage token");
+				setStore ({ authToken: token });
+			},
+			getUser: async () => {
+				const store = getStore()
+				try {
+					const response = await fetch(process.env.BACKEND_URL +"/api/protected", {
+						headers: { Authorization: `Bearer ${store.authToken}` }
+					});
+					if (response.ok) {
+						const data = await response.json();
+						setStore({ user: data })
+						localStorage.setItem("user", JSON.stringify(data))
+					}
+				}
+				catch (error) {
+					console.log(error)
+				}
+			},
+			loadUser: async () => {
+				const store = getStore();
+				try {
+					const response = await fetch(process.env.BACKEND_URL+"api/user", {
+						headers: { Authorization: `Bearer ${store.authToken}` }
+					});
+					if (response.ok) {
+						const data = await response.json();
+						setStore({ users: data.users })
+					}
+				}
+				catch (error) {
+					console.log(error)
+				}
+			},
+			logOut: async (navigate) => {
+				setStore({ user: null, authToken: null });
+				sessionStorage.removeItem("token");
+				localStorage.clear()
+				navigate("/")
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			setDoctorData: (data) => {
+				const store = getStore();
+				setStore({ ...store, doctors: data });
+			},
+			setAppointmentData: (data) => {
+				const store = getStore();
+				setStore({ ...store, appointments: data });
+			},
+			setReportData: (data) => {
+				const store = getStore();
+				setStore({ ...store, reports: data });
+			},
+			setChannelData: (data) => {
+				const store = getStore();
+				setStore({ ...store, newsapi: data });
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend

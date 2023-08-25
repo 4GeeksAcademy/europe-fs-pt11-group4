@@ -6,10 +6,23 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+import { ProductDisplay } from "./pages/checkout";
+import { Success } from "./pages/success";
+import { Canceled } from "./pages/canceled";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { FrequentlyAskedQuestions } from "./pages/frequentlyAskedQuestions";
+import { Contact } from "./pages/contact";
+import { AboutUs } from "./pages/aboutUs";
+
+import { SignUp } from "./pages/signup";
+import { Booking } from "./pages/booking";
+import { Login } from "./pages/login";
+import { Private } from "./pages/private";
+import { Report } from "./pages/report";
+import { Forgot } from "./pages/forgot";
 
 //create your first component
 const Layout = () => {
@@ -26,6 +39,18 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<SignUp />} path="/signup" />
+                        <Route element={<Booking />} path="/booking" />
+                        <Route element={<Forgot />} path="/forgot" />
+                        <Route element={<Private />} path="/private" />
+                        <Route element={<FrequentlyAskedQuestions />} path="/frequentlyAskedQuestions" />
+                        <Route element={<Report />} path="/report" />
+                        <Route element={<Contact />} path="/contact" />
+                        <Route element={<AboutUs />} path="/aboutUs" />
+                        <Route element={<ProductDisplay />} path="/checkout" />
+                        <Route element={<Success />} path="/success" />
+                        <Route element={<Canceled />} path="/canceled" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
