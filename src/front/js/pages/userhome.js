@@ -47,7 +47,7 @@ export const UserHome = (props) => {
             <Card border="success" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
               <Card.Header>Weight</Card.Header>
               <Card.Body>
-                <Card.Title>80kg</Card.Title>
+                <Card.Title>70kg</Card.Title>
               </Card.Body>
             </Card>
             <br />
