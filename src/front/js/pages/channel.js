@@ -10,7 +10,11 @@ export const Channel = () => {
     const apiUrl = 'https://eventregistry.org/api/v1/article/getArticles';
     const requestBody = {
         "action": "getArticles",
-        "keyword": "medicine",
+        "keyword": [
+            "Health",
+            "Medicine",
+            "Research"
+          ],
           "keywordOper": "and",
             "lang": [
                 "eng",
@@ -26,7 +30,7 @@ export const Channel = () => {
         "news",
         "pr"
         ],
-        "apiKey": "1234",
+        "apiKey": "123",
         "forceMaxDataTimeWindow": 31
     };
     const headers = {
