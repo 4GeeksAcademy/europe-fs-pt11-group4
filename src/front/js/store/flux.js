@@ -19,6 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: null,
 			users: [],
 			appointments: [],
+			reports: [],
 			newsapi: [],
 		},
 		actions: {
@@ -50,13 +51,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return false
 
 			},
-
 			syncTokenFromSessionStore: () => {
 				const token = sessionStorage.getItem("token");
 				console.log("Application just loaded, syncing the session storage token");
 				setStore ({ authToken: token });
 			},
-
 			getUser: async () => {
 				const store = getStore()
 				try {
@@ -72,9 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.log(error)
 				}
-
 			},
-
 			loadUser: async () => {
 				const store = getStore();
 				try {
@@ -89,18 +86,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.log(error)
 				}
-
 			},
-
 			logOut: async (navigate) => {
 				setStore({ user: null, authToken: null });
 				sessionStorage.removeItem("token");
 				localStorage.clear()
 				navigate("/")
 			},
-
-
-
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -112,6 +104,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setAppointmentData: (data) => {
 				const store = getStore();
 				setStore({ ...store, appointments: data });
+			},
+			setReportData: (data) => {
+				const store = getStore();
+				setStore({ ...store, reports: data });
 			},
 			setChannelData: (data) => {
 				const store = getStore();

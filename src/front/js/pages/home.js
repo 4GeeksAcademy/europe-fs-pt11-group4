@@ -67,7 +67,7 @@ export const Home = () => {
 					<div className="row mt-4">
 						<h2 className="display-4 text-center">How It Works</h2><br></br>
 						<h4 className="text-success text-center">Say goodbye to the inconvenience and stress of traditional docotor visits. In four easy steps book an appointment right from where you are!</h4><br></br>
-						<div className="row-sm-12  gap-4 m-4">
+						<div className="row gap-4 m-4">
 							{data.map(cardOne =><CardOne
 								step={cardOne.step}
 								title={cardOne.title}
