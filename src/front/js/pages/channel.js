@@ -26,7 +26,7 @@ export const Channel = () => {
         "news",
         "pr"
         ],
-        "apiKey": API_KEY,
+        "apiKey": "1234",
         "forceMaxDataTimeWindow": 31
     };
     const headers = {

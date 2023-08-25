@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
 
-export const Appointments = (props) => {
+export const Appointments = () => {
 	const { store, actions } = useContext(Context);
 
 	console.log(store)
@@ -55,44 +55,44 @@ export const Appointments = (props) => {
 		<div className="container footer-eighty">
             {((store.appointments.length) === 0) ? <h4>You have no upcoming consultations</h4> :
             <Table striped hover>
-                    <thead>
-                        <tr>
-                        <th>Date and time</th>
-                        <th>Doctor</th>
-                        <th>Reason</th>
-                        <th>Cost</th>
-                        <th></th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    {store.appointments.map((appointment) => {
-                        return (
-                            <tbody key={appointment.id}>
-                                <tr>
-                                <td>{formatDateTime(appointment.time)}</td>
-                                {store.doctors.map((doctor) => {
-                                    if (doctor.id === appointment.doctor_id){
-                                        return (
-                                            <td>Dr. {doctor.name}</td>
-                                        );}
-                                    })}
-                                <td>{appointment.user_comment}</td>
-                                {store.doctors.map((doctor) => {
-                                    if (doctor.id === appointment.doctor_id){
-                                        return (
-                                            <td>{doctor.price}€</td>
-                                        );}
-                                    })}
-                                <td>
-                                    <Link to='/checkout'>
-						                <div className="text-success">Pay</div>
-					                </Link>
-                                </td>
-                                <td>
-						            <div name="appointment_id" value={appointment.id} className="text-danger" onClick={() => deleteAppointments(appointment.id)}style={{ cursor: 'pointer' }}>Cancel</div>
-                                </td>
-                                </tr>
-                            </tbody>
+                <thead>
+                    <tr>
+                    <th>Date and time</th>
+                    <th>Doctor</th>
+                    <th>Reason</th>
+                    <th>Cost</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                {store.appointments.map((appointment) => {
+                    return (
+                        <tbody key={appointment.id}>
+                            <tr>
+                            <td>{formatDateTime(appointment.time)}</td>
+                            {store.doctors.map((doctor) => {
+                                if (doctor.id === appointment.doctor_id){
+                                    return (
+                                        <td>Dr. {doctor.name}</td>
+                                    );}
+                                })}
+                            <td>{appointment.user_comment}</td>
+                            {store.doctors.map((doctor) => {
+                                if (doctor.id === appointment.doctor_id){
+                                    return (
+                                        <td>{doctor.price}€</td>
+                                    );}
+                                })}
+                            <td>
+                                <Link to='/checkout'>
+                                    <div className="text-success">Pay</div>
+                                </Link>
+                            </td>
+                            <td>
+                                <div name="appointment_id" value={appointment.id} className="text-danger" onClick={() => deleteAppointments(appointment.id)}style={{ cursor: 'pointer' }}>Cancel</div>
+                            </td>
+                            </tr>
+                        </tbody>
                         );
                     })}
             </Table>
