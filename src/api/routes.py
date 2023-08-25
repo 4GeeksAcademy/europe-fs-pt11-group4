@@ -59,6 +59,9 @@ def protected():
     # Access the identity of the current user with get_jwt_identity
     current_user_id = get_jwt_identity()
     user = User.query.get(current_user_id)
+    if user is None:
+        # the user was not found
+        return jsonify({"msg": "User not found"}), 404
     
     return jsonify({"id": user.id, "email": user.email, }), 200
 
