@@ -142,13 +142,13 @@ def create_checkout_session():
                     'product_data': {
                     'name': 'Appointment with Dr. Susana Lowes',
                     },
-                    'unit_amount': 8900,
+                    'unit_amount': 3900,
                 },
                 'quantity': 1,
                 }],
             mode='payment',
-            success_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/success',
-            cancel_url='https://verbose-space-waffle-p4vvpgrjjj72vv4-3000.app.github.dev/canceled',
+            success_url='https://redesigned-tribble-wp66g97rr4j2gqwx-3000.app.github.dev/success',
+            cancel_url='https://redesigned-tribble-wp66g97rr4j2gqwx-3000.app.github.dev/canceled',
         )
     except Exception as e:
         return str(e)

@@ -56,7 +56,7 @@ export const Doctors = () => {
 								<div className="card-body">
 									<h5 className="card-title">Dr. {doctor.name}</h5>
 									<p className="card-text"><b>Specialty</b>: {doctor.specialty}</p>
-									<p className="card-text"><b>Price per session</b>: {doctor.price}€</p>
+									<p className="card-text"><b>Price per session</b>: €{doctor.price}</p>
 								</div>
 							</div>	
 						</div>

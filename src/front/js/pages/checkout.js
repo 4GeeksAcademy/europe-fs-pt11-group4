@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import "./App.css";
 
 export const ProductDisplay = () => (
-  <div className="container">
+  <div className="container footer-eighty">
     <section className="d-flex">
     <div className="product">
       <img
@@ -14,7 +13,7 @@ export const ProductDisplay = () => (
     <div className="p-5">
       <div className="description">
         <h3>Appointment with Dr. Susana Lowes</h3>
-        <h5>$89.00</h5>
+        <h5>€39.00</h5>
       </div>
       <form action={process.env.BACKEND_URL+'/api/create-checkout-session'}  method="POST">
         <button type="submit" className="btn btn-primary">
