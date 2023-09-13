@@ -34,12 +34,16 @@ export const Private = () => {
 					</Tab>
 				</TabList>
 				<TabPanel>
-					<h2>Welcome back {store.user.name.split(" ")[0]}! </h2>
+					<h2>Welcome back! </h2>
 					<br />
 					<UserHome />	
 				</TabPanel>
 				<TabPanel>
-					<Doctors />
+					<div className="list-group list-group-horizontal inline-scroll" style={{ overflow: "auto" }}>
+						<Doctors />
+					</div>
+					<br />
+					<br />
 					<h4>&nbsp;Book your next consultation in four easy steps...</h4>
 					<div className="d-flex">
 						<div className="flex-fill">

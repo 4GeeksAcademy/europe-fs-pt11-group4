@@ -24,10 +24,10 @@ export const Navbar = () => {
 								<img src={loggedUserIcon} alt="user" style={{ width: '35px' }} />
 							</span>
 							<ul className="dropdown-menu p-2">
-								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/private"><strong>User home <i class="fa-solid fa-house-chimney-user"></i></strong></Link></li>
-								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/booking"><strong>Book consultation <i class="fa-regular fa-calendar-check"></i></strong></Link></li>
+								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/private"><strong>User home</strong></Link></li>
+								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/booking"><strong>Book consultation</strong></Link></li>
 								<hr className="text-danger"></hr>
-								<li><Link to="/"><span className="text-danger" onClick={() => actions.logOut()}><strong>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></strong></span></Link></li>
+								<li><Link to="/"><span className="text-danger" onClick={() => actions.logOut()}><strong><i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp;Logout</strong></span></Link></li>
 							</ul>
         				</li>
 					</div>
