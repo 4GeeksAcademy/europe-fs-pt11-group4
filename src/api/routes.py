@@ -25,12 +25,11 @@ def create_user():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     name = request.json.get("name", None)
-    dob = request.json.get("dob", None)
 
-    if not email or not password or not name or not dob:
-        return jsonify({ "msg": "No password or email or name or dob present." }), 400
+    if not email or not password or not name:
+        return jsonify({ "msg": "No password or email or name present." }), 400
     
-    new_user = User(email=email, password=get_hash(password), name= name, dob=dob)
+    new_user = User(email=email, password=get_hash(password), name= name)
     db.session.add(new_user)
     db.session.commit()
 
@@ -51,7 +50,7 @@ def create_token():
     
     # create a new token with the user id inside
     access_token = create_access_token(identity=user.id)
-    return jsonify({ "token": access_token, "user_id": user.id, "email": user.email, "name": user.name, "dob": user.dob })
+    return jsonify({ "token": access_token, "user_id": user.id, "email": user.email, "name": user.name })
 
 @api.route("/protected", methods=["GET"])
 @jwt_required()

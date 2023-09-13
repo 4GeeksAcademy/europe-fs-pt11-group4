@@ -10,17 +10,15 @@ export const SignUp = () => {
 
     const [inputValues, handleInputChange] = useForm({
         name:'',
-        dob:'',
         email:'',
         password: '',
         password2: '',
     })
 
-    const { name, dob, email, password, password2 } = inputValues  
+    const { name, email, password, password2 } = inputValues  
     
     const [error, setError] = useState({
         name: false,
-        dob: false,
         email: false,
         password: false,
         password2: false
@@ -34,7 +32,6 @@ const createUser = async (event) => {
     event.preventDefault();
     setError({
         name: name === "",
-        dob: dob === "",
         email: email === "",
         password: password === "",
         password2: password2 === "" || password !== password2
@@ -45,7 +42,6 @@ const createUser = async (event) => {
     }
     if (
         name !== '' &&
-        dob !== '' &&
         email !== '' &&
         password !== '' &&
         password2 !== ''
@@ -55,7 +51,6 @@ const createUser = async (event) => {
             method: 'POST',
             body: JSON.stringify({
                 name: name,
-                dob: dob,
                 email: email,
                 password: password
             }),
@@ -87,14 +82,6 @@ const createUser = async (event) => {
                             <label className="form-label" htmlFor="form3Example3c">Name</label>
                             <input style={error.name ? errorStyle : {}} type="text" name="name" id="form3Example1f" className="form-control" value={name} onChange={handleInputChange} />
                             {error.name && <div className="badge bg-danger text-wrap">Name is required</div>}
-                        </div>
-                    </div>
-                
-                    <div className="d-flex flex-row align-items-center mb-4">
-                        <div className="form-outline flex-fill mb-0">
-                            <label className="form-label" htmlFor="form3Example3c">Date of Birth</label>
-                            <input style={error.dob ? errorStyle : {}} type="text" name="dob" id="form3Example1f" placeholder="dd-mm-yyyy" className="form-control" value={dob} onChange={handleInputChange} />
-                            {error.dob && <div className="badge bg-danger text-wrap">DOB is required</div>}
                         </div>
                     </div>
 

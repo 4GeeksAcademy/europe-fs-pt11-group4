@@ -7,15 +7,13 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(250), unique=False, nullable=False)
     name = db.Column(db.String(250), unique=False, nullable=False)
-    dob = db.Column(db.String(100), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, default=False)
     appointments = db.relationship('Appointment', backref='user', lazy=True)
 
-    def __init__(self, email, password, name, dob):
+    def __init__(self, email, password, name):
         self.email = email
         self.password = password
-        self.name = name 
-        self.dob =dob
+        self.name = name
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -25,7 +23,6 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            "dob": self.dob,
             # do not serialize the password, its a security breach
         }
     
