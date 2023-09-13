@@ -33,7 +33,7 @@ export const UserHome = (props) => {
             <Card border="primary" className="health-data" style={{ width: '18rem', marginRight: "7px", boxShadow: "3px 3px 3px #9E9E9E" }}>
               <Card.Header>Date of birth</Card.Header>
               <Card.Body>
-                <Card.Title>{store.user.dob}</Card.Title>
+                <Card.Title>12 March 1993</Card.Title>
               </Card.Body>
             </Card>
             <br />
