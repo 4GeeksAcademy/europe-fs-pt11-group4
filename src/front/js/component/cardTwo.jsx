@@ -5,8 +5,8 @@ const CardTwo = (props) => {
 		<div className="col-12 card border border-secondary-subtle rounded shadow " key={props.idx}>
 			{props.idx%2==0 ? (
 				<div className="row g-0 p-4">
-					<div className="col-sm-4 mt-5">
-						<img src={props.imageUrlTwo} className="img-fluid rounded-start" alt="..."/>
+					<div className="col-sm-4 mt-5 align-self-center">
+						<img src={props.imageUrlTwo} className="shadow img-fluid rounded-start" alt="..."/>
 					</div>
 					<div className="col-sm-8">
 						<div className="text-start ms-5">
@@ -108,8 +108,8 @@ const CardTwo = (props) => {
 						</div>
 						<h5 className="text-success p-5"><a href="/login">Find out more</a></h5>
             		</div>
-					<div className="col-sm-4 mt-5">
-						<img src={props.imageUrlTwo} className="img-fluid rounded-start" alt="..."/>
+					<div className="col-sm-4 mt-5 align-self-center">
+						<img src={props.imageUrlTwo} className="shadow img-fluid rounded-start" alt="..."/>
 					</div>
 				</div>
 				)}	

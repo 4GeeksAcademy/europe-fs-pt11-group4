@@ -8,7 +8,7 @@ const ReviewCard = (props) => {
                 <div className="card-header bg-transparent border-success">{props.header}</div>
                     <div className="card-body text-success">
                         <h5 className="card-title">{props.titleThree}</h5>
-                        <p className="card-text">{props.descriptionThree}</p>
+                        <p className="card-text text-dark">{props.descriptionThree}</p>
                             <span>⭐⭐⭐⭐⭐</span>
                     </div>
                 <div className="card-footer bg-transparent border-success">{props.footer}</div>
