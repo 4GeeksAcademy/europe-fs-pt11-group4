@@ -42,6 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const data = await response.json()
 						setStore({ authToken: data.token, user: data });
 						sessionStorage.setItem("token", data.token);
+						sessionStorage.setItem("userData", JSON.stringify(data));
 						navigate("/private")
 						return true
 					}
@@ -53,8 +54,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			syncTokenFromSessionStore: () => {
 				const token = sessionStorage.getItem("token");
-				console.log("Application just loaded, syncing the session storage token");
-				setStore ({ authToken: token });
+				const sessionData = sessionStorage.getItem("userData");
+				const data = JSON.parse(sessionData);
+				console.log("Application just reloaded, syncing the session storage data");
+				setStore ({ authToken: token, user: data });
 			},
 			getUser: async () => {
 				const store = getStore()

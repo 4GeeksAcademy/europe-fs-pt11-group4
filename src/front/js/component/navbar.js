@@ -19,15 +19,17 @@ export const Navbar = () => {
 					{store.authToken 
 					? 
 					<div>
-						<li class="nav-item dropdown">
-							<span class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<img src={loggedUserIcon} alt="user" style={{ width: '35px' }} />
+						<li className="nav-item dropdown">
+							<span className="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src={loggedUserIcon} alt="user" style={{ width: '29px' }} />
+								&nbsp;
+								{store.user.name}
 							</span>
 							<ul className="dropdown-menu p-2">
 								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/private"><strong>User home</strong></Link></li>
 								<li style={{ overFlow: 'auto', whiteSpace: "nowrap" }}><Link to="/booking"><strong>Book consultation</strong></Link></li>
 								<hr className="text-danger"></hr>
-								<li><Link to="/"><span className="text-danger" onClick={() => actions.logOut()}><strong><i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp;Logout</strong></span></Link></li>
+								<li><Link to="/"><span className="text-danger" onClick={() => actions.logOut()}><strong><i className="fa-solid fa-arrow-right-from-bracket"></i> &nbsp;Logout</strong></span></Link></li>
 							</ul>
         				</li>
 					</div>
