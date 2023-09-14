@@ -27,7 +27,7 @@ export const Footer = () => (
 				</Link>
 			</div>
 			<div className="m-3">
-				@2023 All Rights Reserved
+				© 2023 All Rights Reserved
 			</div>
 			
 		</div>
