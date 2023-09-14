@@ -18,6 +18,8 @@ export const Private = () => {
 	return (
 		<div className="container footer-eighty">
 			{console.log(store)}
+			{store.authToken 
+			? 
 			<Tabs>
 				<TabList>
 					<Tab>
@@ -34,7 +36,7 @@ export const Private = () => {
 					</Tab>
 				</TabList>
 				<TabPanel>
-					<h2>Welcome back! </h2>
+					<h2>Welcome back {store.user.name.split(" ")[0]}!</h2>
 					<br />
 					<UserHome />	
 				</TabPanel>
@@ -70,6 +72,8 @@ export const Private = () => {
 					<Channel />
 				</TabPanel>
 			</Tabs>
+			:
+			<h2>Please log in</h2>}
 		</div>
 	);
 };
