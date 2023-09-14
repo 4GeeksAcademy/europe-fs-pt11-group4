@@ -13,12 +13,16 @@ export const Booking = () => {
     const { store, actions } = useContext(Context);
     const [uniqueSpecialties, setUniqueSpecialties] = useState([]);
 	const [selectedSpecialty, setSelectedSpecialty] = useState('');
+    const [isTosAccepted, setIsTosAccepted] = useState(false);
+    const handleCheckboxChange = () => {
+        setIsTosAccepted(!isTosAccepted);
+    };
     const navigate = useNavigate();
 
     const [startDate, setStartDate] = useState(new Date());
     let handleColor = (time) => {
         return time.getHours() > 12 ? "text-success" : "text-error";
-      };
+    };
     
     useEffect(() =>{
 		fetch(process.env.BACKEND_URL +"/api/doctors")
@@ -158,10 +162,14 @@ const createAppointment = async (event) => {
                 </Form.Group>
                 <br />
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="I accept the terms and conditions" />
+                    <label>
+                        <input type="checkbox" checked={isTosAccepted} onChange={handleCheckboxChange}/>
+                        &nbsp;
+                        I accept the <Link to="/tos">terms and conditions</Link>
+                    </label>
                 </Form.Group>
                 <br />
-                <Button variant="primary w-100" type="submit" onClick={createAppointment}>
+                <Button variant="primary w-100" type="submit" disabled={!isTosAccepted} onClick={createAppointment}>
                     Book consultation
                 </Button>
             </div>
