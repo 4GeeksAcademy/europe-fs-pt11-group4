@@ -15,11 +15,11 @@ const data = [{step: "STEP 1", title:"Select a Speciality", description:"From ou
 {step: "STEP 3", title:"Book an Online Consultation", description:"Choose according to your convenience the day and the time slot. The doctors are available 24 hours a day. 7 days a week"},
 {step: "STEP 4", title:"Make Payment Online", description:"Check your booking details and pay online. You get an immediate confirmation. Without any hassle you are ready for the consultation"},]
 
-const dataThree =[{header:"Alexis", titleThree:"A wonderful experience", descriptionThree:"The process is quick and easy. The doctors are nice and experienced.", footer:"20/1/2023"},
-{header:"Johnson", titleThree:"Easy to use app", descriptionThree:"Booking an appointemnt with this app is easy. It saves a lot of hassles.", footer:"5/2/2023"},
+const dataThree =[{header:"Alexis", titleThree:"A+ experience", descriptionThree:"The process is quick and easy. The doctors are nice and experienced.", footer:"20/1/2023"},
+{header:"Johnson", titleThree:"Easy to use app", descriptionThree:"Booking an appointment with this app is easy. It saves you a lot of hassle.", footer:"5/2/2023"},
 {header:"Raul", titleThree:"A great app", descriptionThree:"I am definitely going to recommend it to my friends and family.", footer:"28/3/2023"},
-{header:"Sara", titleThree:"Excellent team of doctors", descriptionThree:"Thanks to doctor Jacob´s correct diagnosis I got instant relief!", footer:"7/5/2023"},
-{header:"Sonya", titleThree:"Better than any such app around", descriptionThree:"The app helped me find a German speaking doctor.", footer:"30/7/2023"},
+{header:"Sara", titleThree:"Excellent team of doctors", descriptionThree:"Thanks to Doctor Jacob's correct diagnosis I got instant relief!", footer:"7/5/2023"},
+{header:"Sonya", titleThree:"Better than any such app around", descriptionThree:"The app helped me to find a German speaking doctor.", footer:"30/7/2023"},
 ]
 
 
