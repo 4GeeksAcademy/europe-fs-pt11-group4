@@ -100,8 +100,8 @@ const createAppointment = async (event) => {
 }
 	return (
         <div className="container">
+            <br />
             <div className="w-50 p-5 mx-auto border border-secondary rounded">
-               
                 <h3 className="text-center mb-4">Consultation booking</h3>
                 <div className="d-flex">
                     <Form.Group className="mb-3 w-100" controlId="patientName">

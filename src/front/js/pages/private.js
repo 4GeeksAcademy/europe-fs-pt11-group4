@@ -17,6 +17,7 @@ export const Private = () => {
 
 	return (
 		<div className="container footer-eighty">
+			<br />
 			{console.log(store)}
 			{store.authToken 
 			? 
@@ -36,7 +37,7 @@ export const Private = () => {
 					</Tab>
 				</TabList>
 				<TabPanel>
-					<h2>Welcome back {store.user.name.split(" ")[0]}!</h2>
+					<h3>Welcome back {store.user.name.split(" ")[0]}!</h3>
 					<br />
 					<UserHome />	
 				</TabPanel>

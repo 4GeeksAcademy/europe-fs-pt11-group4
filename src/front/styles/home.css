@@ -7,6 +7,7 @@
 */
 .navbar {
     color: white;
+    border-bottom: 1px solid #B6D0E2;
 }
 .brand {
     color: #0073D1;
@@ -22,4 +23,21 @@ a{
 
 .footer-eighty {
     min-height: 80vh;
+}
+
+.react-tabs__tab {
+    font-weight: 550;
+    font-size: 18px;
+    color: #B6D0E2;
+}
+
+.react-tabs__tab--selected {
+    font-weight: 550;
+    font-size: 18px;
+    color: #0066c8 !important;
+}
+
+.react-tabs__tab:hover {
+    color: #0099ff;
+    transition: 0.1s;
 }
