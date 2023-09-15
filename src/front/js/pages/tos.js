@@ -6,12 +6,13 @@ export const Tos = () => {
 
 	return (
 			<div className="container footer-eighty">
+                <br />
                 <h1>Terms and conditions</h1>
-
+                <br />
+                
                 <h6>Effective Date: January 1, 2022</h6>
 
                 <p>
-
                     myDoctor Health, Inc., on its own behalf and its affiliates and/or wholly owned subsidiaries including, but not limited to, Best Doctors, Inc., HealthiestYou, Inc., Advance Medical Inc., Livongo Health, Inc., myStrength, Inc., and InTouch Technologies ("myDoctor", "we", "us" "our"), (collectively referred to as "myDoctor", "we", "us", or "our"), makes certain telehealth related information available to you and/or facilitates your access to telemedicine, chronic condition management, and expert medical services ("myDoctor Health Services").
                     <br />
                     <br />
