@@ -47,7 +47,7 @@ export const Private = () => {
 					</div>
 					<br />
 					<br />
-					<h4>&nbsp;Book your next consultation in four easy steps...</h4>
+					<h4>;&nbspBook your next consultation in four easy steps...</h4>
 					<div className="d-flex">
 						<div className="flex-fill">
 							<ListGroup as="ol" numbered>

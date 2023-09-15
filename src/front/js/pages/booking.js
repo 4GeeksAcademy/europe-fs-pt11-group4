@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "../../styles/home.css";
 
 
 export const Booking = () => {
@@ -101,8 +102,8 @@ const createAppointment = async (event) => {
 	return (
         <div className="container">
             <br />
-            <div className="w-50 p-5 mx-auto border border-secondary rounded">
-                <h3 className="text-center mb-4">Consultation booking</h3>
+            <div className="w-50 p-5 mx-auto border border-info-subtle rounded">
+                <h3 className="booking-header text-center mb-4">Consultation booking</h3>
                 <div className="d-flex">
                     <Form.Group className="mb-3 w-100" controlId="patientName">
                         <Form.Label>Patient Name</Form.Label>
