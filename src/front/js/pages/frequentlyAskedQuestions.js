@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export const FrequentlyAskedQuestions=()=>{
 
 	return (
-    
-		<div className="container text-center">
+		<div className="container text-center footer-eighty">
+            <br />
 			<div className="container p-6 m-7">
                 <h2 className="text-center mt-0 mb-1">FAQs</h2><br></br>
                     <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -45,11 +45,11 @@ export const FrequentlyAskedQuestions=()=>{
     
                 <hr className="my-4" />
     
-                <Link to="/">
+                {/* <Link to="/">
                     <span className="btn btn-primary w-50 m-3" href="#" role="button">
                         Back Home
                     </span>
-                </Link>
+                </Link> */}
         </div>
 
         );

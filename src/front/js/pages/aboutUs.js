@@ -3,22 +3,22 @@ import ContactCard from "../component/contactCard.jsx";
 import "../../styles/contact.css";
 
 const contacts = [
-    {title:"Jide", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "jide@test.com", phone: "123456789"},
-    {title:"Smita", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4 Geeks Academy", email: "smitra@test.com", phone: "123456789"}]
+    {title:"Jide", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4Geeks Academy", email: "jide@mydoctor.com", phone: "+34 631438897"},
+    {title:"Smita", imageURL: "", role: "Designer and Developer", info: "Learning under the aegis of 4Geeks Academy", email: "smitra@mydoctor.com", phone: "+34 314385979"}]
 
     
 export const AboutUs=()=>{
 
 	return (
-        <div className="bg-light">
+        <div className="bg-light footer-eighty">
 
             <div className="text-center p-4">
                 <h1>About Us</h1><br></br>
-                <h5>At myDoctor, we believe in providing prompt and convenient care to all our users. 
+                <p>At myDoctor, we believe in providing prompt and convenient care to all our users. 
                     That's why we offer online medical services through our app, providing the relief you need without the hassle of traveling to a doctor's office. 
                     myDoctor App simplifies communication with doctors all over EU.
                     We build trust between doctors and patients every day, so that you get the best service.
-                </h5>
+                </p>
             </div>
             <hr></hr>
 

@@ -1,13 +1,14 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
-
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import { Context } from "../store/appContext";
 
 
 export const Appointments = () => {
 	const { store, actions } = useContext(Context);
-
+    const [showModal, setShowModal] = useState(false);
 	console.log(store)
 
 	useEffect(() => {
@@ -31,7 +32,7 @@ export const Appointments = () => {
 		})
         .then(result => {
             if (result.ok){
-                alert('Consultation cancelled')
+                setShowModal(true);
             return result.json()  
             }})
 		.then(data => {actions.setAppointmentData(data);
@@ -97,6 +98,22 @@ export const Appointments = () => {
                     })}
             </Table>
             }
+
+            <Modal className="text-center" show={showModal} onHide={() => setShowModal(false)}>
+                {/* <Modal.Header closeButton>
+                    <Modal.Title>SUCCESS</Modal.Title>
+                </Modal.Header> */}
+                <Modal.Body>
+                    Selected consultation cancelled.
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button className="mx-auto d-block" variant="primary" onClick={() => {
+                        setShowModal(false);
+                    }}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 		</div>
 	);
 };
