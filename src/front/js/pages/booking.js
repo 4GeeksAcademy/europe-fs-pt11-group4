@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Modal from 'react-bootstrap/Modal';
 import "../../styles/home.css";
 
 
@@ -18,6 +19,7 @@ export const Booking = () => {
     const handleCheckboxChange = () => {
         setIsTosAccepted(!isTosAccepted);
     };
+    const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     const [startDate, setStartDate] = useState(new Date());
@@ -89,8 +91,7 @@ const createAppointment = async (event) => {
             },
         })
         if (response.ok){
-            alert('Appointment created successfully')
-            navigate("/private")
+            setShowModal(true);
             return true
         }
        }
@@ -102,7 +103,7 @@ const createAppointment = async (event) => {
 	return (
         <div className="container">
             <br />
-            <div className="w-50 p-5 mx-auto border border-info-subtle rounded">
+            <div className="w-50 p-5 mx-auto border border-info-subtle rounded" style={{ boxShadow: "3px 3px 3px #9E9E9E" }}>
                 <h3 className="booking-header text-center mb-4">Consultation booking</h3>
                 <div className="d-flex">
                     <Form.Group className="mb-3 w-100" controlId="patientName">
@@ -140,13 +141,13 @@ const createAppointment = async (event) => {
                     </Form.Select>   
                 </Dropdown>  
                 <br />
-                <br />
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                
+                <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Reason for consultation</Form.Label>
                     <Form.Control as="textarea" rows={3} name="user_comment" value={user_comment} onChange={handleInputChange} />
                 </Form.Group> 
                 <br />
-                <Form.Group className="mb-3" controlId="timeSelect" type="date"  name="time" value={time}>
+                <Form.Group className="mb-1" controlId="timeSelect" type="date"  name="time" value={time}>
                     <DatePicker
                         showTimeSelect
                         selected={startDate}
@@ -162,7 +163,7 @@ const createAppointment = async (event) => {
                     />
                 </Form.Group>
                 <br />
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-1" controlId="formBasicCheckbox">
                     <label>
                         <input type="checkbox" checked={isTosAccepted} onChange={handleCheckboxChange}/>
                         &nbsp;
@@ -174,6 +175,23 @@ const createAppointment = async (event) => {
                     Book consultation
                 </Button>
             </div>
+            
+            <Modal className="text-center" show={showModal} onHide={() => setShowModal(false)}>
+                {/* <Modal.Header closeButton>
+                    <Modal.Title>SUCCESS</Modal.Title>
+                </Modal.Header> */}
+                <Modal.Body>
+                    Your consultation has been booked successfully.
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button className="mx-auto d-block" variant="primary" onClick={() => {
+                        setShowModal(false);
+                        navigate("/private");
+                    }}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
 	);
 };

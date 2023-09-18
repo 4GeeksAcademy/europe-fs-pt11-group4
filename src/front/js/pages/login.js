@@ -5,8 +5,6 @@ import "../../styles/home.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 
-
-
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 
@@ -53,6 +51,7 @@ export const Login = () => {
 	return (
 
 		<div className="container ">
+            <br />
             <div className="w-50 mx-auto border border-primary-subtle p-5">
                 <form>                               
                     <h5 className="fw-normal mb-3 pb-3 text-center" style={{ letterSpacing: "1px" }}>Sign in to myDoctor</h5>
@@ -85,8 +84,6 @@ export const Login = () => {
                         </div>
 
                 </form>
-
-
 
                     <Modal show={showModal} onHide={() => setShowModal(false)}>
                         <Modal.Header closeButton>

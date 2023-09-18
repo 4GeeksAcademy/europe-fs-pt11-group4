@@ -36,8 +36,8 @@ export const Navbar = () => {
 					:
 					<div>
 						<Link to="/login"><button className="btn btn-outline-primary rounded-pill">Login</button></Link>
-						&nbsp; 
-						<Link to="/signup"><button className="btn btn-primary rounded-pill">Register now</button></Link>
+						&nbsp;&nbsp;
+						<Link to="/signup"><button className="btn btn-primary rounded-pill">Register</button></Link>
 					</div>}
 				</div>
 			</div>
