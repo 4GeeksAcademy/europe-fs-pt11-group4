@@ -6,6 +6,7 @@ export const Success = () => {
 
 	return (
 			<div className="container footer-eighty">
+                <br />
                 <h3>Payment successful </h3>
                 <br />
                 <br />

@@ -6,6 +6,7 @@ export const Canceled = () => {
 
 	return (
 			<div className="container footer-eighty">
+                <br />
                 <h3>Payment canceled </h3>
                 <br />
                 <br />
